@@ -1,5 +1,5 @@
 +++
-title = "Open Source"
+title = "Open-Source"
 
 [asset]
   icon = "fas fa-code-branch"

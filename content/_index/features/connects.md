@@ -1,5 +1,5 @@
 +++
-title = "Connects"
+title = "Connectivity"
 
 [asset]
   icon = "fas fa-link"

@@ -1,5 +1,5 @@
 +++
-title = "Secure"
+title = "Security"
 
 [asset]
   icon = "fas fa-shield-alt"

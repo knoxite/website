@@ -1,5 +1,5 @@
 +++
-title = "Efficient"
+title = "Efficiency"
 
 [asset]
   icon = "fas fa-compress-arrows-alt"
