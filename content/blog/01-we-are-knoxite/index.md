@@ -2,7 +2,7 @@
 fragment = "content"
 weight = 100
 #background = ""
-categories = ["Knoxite", "Blog"]
+#categories = ["Knoxite", "Blog"]
 
 title = "We are Team Knoxite!"
 #subtitle = "This week in knoxite #01"

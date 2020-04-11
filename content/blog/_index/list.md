@@ -1,5 +1,5 @@
 +++
-title = "Knoxite blog"
+#title = "Blog"
 fragment = "list"
 weight = 100
 
