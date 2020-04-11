@@ -1,0 +1,131 @@
+# Site settings
+baseurl = "/"
+languageCode = "en-us"
+title = "Knoxite"
+theme = "syna"
+enableGitInfo = true
+version = "0.16.2"
+
+# Google Analytics tracking
+# googleAnalytics = ""
+
+[outputs]
+  home = ["HTML", "JSON"]
+
+[frontmatter]
+date = ["date", "lastmod"]
+lastmod = ["lastmod", ":git", "date"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+     unsafe = true
+
+[params]
+  name = "Knoxite"
+  description = "An open-source data storage & backup system"
+
+  [params.style]
+    #background = "secondary"
+
+  # Theme customizations
+  # Assets relative to 'static/'
+  [params.custom]
+    favicon = "favicon.ico"
+    favicon_ico_sizes = "16x16 32x32"
+    favicon_png = "favicon.png"
+    favicon_svg = "favicon.svg"
+
+  # Piwik tracking
+  [params.analytics.piwik]
+    url = ""
+    id = ""
+    #domain = "" # Track subdomains via "*.example.com"
+    # Optional hash for integrity check
+    hash = "sha512-RfeD0pacGTqy9m7U6PgehQfS4cc7SIt+e+P+H5e848kEvB/RW84CUGO3O4O3LNbxjevym6KPUZ8muPsMrI8WIw=="
+
+  # Optional, global disable switch for fontawesome related files
+  # For custom fontawesome js files use the custom.js method
+  [params.fontawesome]
+    disabled = false
+    pro = false
+
+  [params.colors]
+    primary = "#00838f"
+    secondary = "#767e96"
+    success = "#008f54"
+    info = "#00c9dc"
+    warning = "#fdf314"
+    danger = "#dc1200"
+    light = "#f8f9fa"
+    dark = "#343a40"
+    knoxite = "#03c03c"
+
+# main/prepend/postpend menus are displayed in nav fragment.
+# Keep an eye out for updates. These will be moved out to make navbar more
+# configurable.
+[[menu.main]]
+  url = "/"
+  name = "Home"
+  weight = 10
+
+[[menu.main]]
+  url = "/blog"
+  name = "Blog"
+  weight = 20
+
+[[menu.main]]
+  url = "/docs"
+  name = "Docs"
+  weight = 30
+
+[[menu.main]]
+  url = "/getting-started"
+  name = "Getting Started"
+  weight = 30
+
+
+[[menu.footer]]
+  url = "#"
+  name = "Home"
+  weight = 10
+
+[[menu.footer]]
+  url = "/getting-started"
+  name = "Getting started"
+  weight = 30
+
+[[menu.footer]]
+  url = "/blog"
+  name = "Blog"
+  weight = 30
+
+[[menu.footer]]
+  url = "/docs"
+  name = "Docs"
+  weight = 30
+
+
+[[menu.copyright_footer]]
+  url = "https://github.com/knoxite/website"
+  name = "Source Code"
+  weight = 30
+
+
+[[menu.footer_social]]
+  weight = 30
+  name = "GitHub"
+  pre = "fab fa-github"
+  url = "https://github.com/knoxite/knoxite"
+
+[[menu.footer_social]]
+  weight = 30
+  name = "Mastodon"
+  pre = "fab fa-mastodon"
+  url = "https://mastodon.social/@knoxite"
+
+  [[menu.footer_social]]
+  weight = 30
+  name = "Gitter"
+  pre = "fab fa-gitter"
+  url = "https://gitter.im/knoxite/chat"
