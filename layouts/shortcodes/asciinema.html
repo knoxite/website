@@ -1,0 +1,12 @@
+<link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
+
+<asciinema-player
+    src="{{ .Get "cast" }}" 
+    theme="{{if (.Get "theme")}}{{ .Get "theme" }}{{ else }}monokai{{ end }}" 
+    autoplay="{{if (.Get "autoplay")}}{{ .Get "autoplay" }}{{ else }}true{{ end }}" 
+    loop="{{if (.Get "loop")}}{{ .Get "loop" }}{{ else }}loop{{ end }}"
+    {{ with .Get "rows" }}rows="{{.}}"{{ end }}
+    {{ with .Get "rows" }}rows="{{.}}"{{ end }}>
+</asciinema-player>
+
+<script src="/js/asciinema-player.js"></script>
