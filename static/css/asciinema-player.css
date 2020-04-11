@@ -2570,3 +2570,7 @@
 asciinema-player.rounded .asciinema-player {
   border-radius: 15px;
 }
+
+asciinema-player.rounded .asciinema-terminal {
+  padding: 8px;
+}
