@@ -1,4 +1,4 @@
 +++
-title = "List"
+title = "Blog"
 background = "light"
 +++
