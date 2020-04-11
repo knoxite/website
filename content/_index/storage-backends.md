@@ -34,7 +34,7 @@ subtitle = "Not only can you connect Knoxite to a wide range of Cloud services, 
 
   <span>
 
-[Check out all supported storage backends 🡆](#)
+[Check out all supported storage backends 🡆](/docs/storage-backends)
 
   </span>
 </center>
