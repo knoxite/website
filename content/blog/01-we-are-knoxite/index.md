@@ -12,21 +12,16 @@ display_date = true
 date = "2020-04-10"
 
 summary = """
+But who is "we"? And what is **knoxite**? And what is this blog all about?
+
+Let me explain all this to you!
 """
 
 [sidebar]
   align = "right"
 
-[asset]
-  image = "image.png"
 +++
 
-
-# Hi - we are Team Knoxite!
-
-But who is "we"? And what is `knoxite`? And what is this blog all about?
-
-Let me explain all this to you!
 
 ## So, what is `knoxite`?
 
