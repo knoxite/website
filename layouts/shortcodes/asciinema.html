@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
 
 <asciinema-player
+    class={{ .Get "class" }}
     src="{{ .Get "cast" }}" 
     theme="{{if (.Get "theme")}}{{ .Get "theme" }}{{ else }}monokai{{ end }}" 
     autoplay="{{if (.Get "autoplay")}}{{ .Get "autoplay" }}{{ else }}true{{ end }}" 

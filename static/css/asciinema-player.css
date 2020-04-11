@@ -2561,3 +2561,12 @@
 .asciinema-theme-monokai .fg-15 {
   font-weight: bold;
 }
+
+
+
+
+/* knoxite related changes */
+
+asciinema-player.rounded .asciinema-player {
+  border-radius: 15px;
+}
