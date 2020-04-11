@@ -116,6 +116,12 @@ $ knoxite -r /tmp/knoxite mount [snapshot ID] /mnt
 ### Repositories and Volumes
 
 ### Encryption
+Choose between several encryption algorithms with the `-e, --encryption` flag
+while storing your data.
+
+```
+$ knoxite store -e aes latest data/ -d "AES encrypted snapshot"
+```
 
 ### Fault-Tolerance
 
