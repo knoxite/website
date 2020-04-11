@@ -9,4 +9,4 @@ background = "dark"
 +++
 
 
-{{< asciinema cast="/casts/tutorial.cast" >}}
+{{< asciinema cast="/casts/tutorial.cast" class="rounded">}}
