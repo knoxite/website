@@ -19,15 +19,15 @@ subtitle = "An open-source data storage & backup system"
 [[buttons]]
   text = "Docs"
   url = "/docs"
-  color = "success" # primary, secondary, success, danger, warning, info, light, dark, link - default: primary
+  color = "primary" # primary, secondary, success, danger, warning, info, light, dark, link - default: primary
 
 [[buttons]]
-  text = "Get started"
+  text = "Get Started"
   url = "/getting-started"
-  color = "success"
+  color = "primary"
 
 [[buttons]]
   text = "Blog"
   url = "/blog"
-  color = "success"
+  color = "primary"
 +++
