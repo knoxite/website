@@ -2,7 +2,7 @@
 fragment = "content"
 #disabled = true
 date = "2016-09-07"
-weight = 119
+weight = 80
 background = "dark"
 
 title = "Store data wherever you want"
@@ -11,6 +11,12 @@ subtitle = "Not only can you connect Knoxite to a wide range of Cloud services, 
 +++
 
 <center>
+  <span style="font-size: 64px;">
+    <i class="fas fa-desktop"></i>
+  </span>
+  <span style="font-size: 64px;">
+    <i class="fas fa-network-wired"></i>
+  </span>
   <span style="font-size: 64px;">
     <i class="fab fa-aws"></i>
   </span>
@@ -27,6 +33,10 @@ subtitle = "Not only can you connect Knoxite to a wide range of Cloud services, 
   <p></p>
 
   <span>
-    <a style="color: white;" href="/storage">Check out all supported storage backends 🡆</a>
+
+[Check out all supported storage backends 🡆](#)
+
   </span>
 </center>
+
+---
