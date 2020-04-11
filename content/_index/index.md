@@ -1,6 +1,6 @@
 +++
 url = "/"
 title = "Knoxite"
-date = "2017-09-07"
-description = "Open Source RAID filesystem for the cloud"
+date = "2020-04-20"
+description = "An open-source data storage & backup system"
 +++
