@@ -13,6 +13,6 @@ subtitle = "We prepared a quickstart guide for you!"
 
 <p>
   <center>
-    <a class="btn btn-primary btn-lg" href="/getting-started" role="button">Get Started</a>
+    <a class="btn btn-primary btn-lg" href="/docs/getting-started" role="button">Get Started</a>
   </center>
 </p>

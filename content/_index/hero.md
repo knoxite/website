@@ -23,7 +23,7 @@ subtitle = "An open-source data storage & backup system"
 
 [[buttons]]
   text = "Get Started"
-  url = "/getting-started"
+  url = "/docs/getting-started"
   color = "primary"
 
 [[buttons]]
