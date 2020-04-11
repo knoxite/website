@@ -120,6 +120,14 @@ $ knoxite -r /tmp/knoxite mount [snapshot ID] /mnt
 ### Fault-Tolerance
 
 ### Compression
+While storing data into snapshots you can choose to compress your data with
+several algorithms.
+
+To do so use the the `-c --compression` option:
+
+```
+$ knoxite store -c gzip latest data/ -d "Compressed snapshot"
+```
 
 ### Automatic backups
 
