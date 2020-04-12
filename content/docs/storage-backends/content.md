@@ -69,6 +69,36 @@ knoxite repo init -r mega://example%40knoxite.com:password@/desired/path
 
 ### SSH/SFTP
 
-### WebDAV
+In order to store data to another computer with ssh, you can use the sftp 
+backend. You have to authenticate via password, or via private key using
+an `ssh-agent` (Make sure to check if `$SSH_AUTH_SOCK` is set). 
+Also make sure that `~/.ssh/known_hosts` contains a valid host key.
+
+```
+knoxite repo init -r sftp://user:password@knoxitessh.com:/path/to/repo
+```
+
+### WebDAV (Next-/OwnCloud)
+
+Although the WebDAV-Backend should be compatible with every WebDAV-Backend,
+right now it is only tested with Next-/OwnCloud.
+
+You have to replace the `http`/`https` in the baseurl with `webdav`/`webdavs`.
+Authentication works via basic/digest auth.
+Please also check out if the path you set already exists.
+
+**Basic Example:**
+
+```
+knoxite repo init -r webdavs://user@password@webdavhost.com/path/to/repo
+```
+
+**Next-/OwnCloud-Example:**
+
+```
+knoxite repo init -r webdavs://user@password@knoxitecloud.com/remote.php/webdav/path/to/repo
+```
+
+
 
 </p>
