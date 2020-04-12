@@ -2,9 +2,9 @@
 fragment = "content"
 weight = 100
 #background = ""
-#categories = ["Knoxite", "Blog"]
+#categories = ["knoxite", "blog"]
 
-title = "We are Team Knoxite!"
+title = "We are Team knoxite!"
 #subtitle = "This week in knoxite #01"
 title_align = "left"
 
@@ -12,7 +12,7 @@ display_date = true
 date = "2020-04-10"
 
 summary = """
-Hello from Team Knoxite!
+Just a short 'Hello' from team knoxite!
 """
 
 [sidebar]
