@@ -91,6 +91,38 @@ copy from Settings > Access keys.
 
 ### Backblaze
 
+In order to to use your B2 Cloud Storage you'll have to setup an application key
+first. Then you can use the applications credentials in knoxites URL scheme.
+
+#### URL Scheme
+
+You can use the **backblaze** B2 Cloud Storage in knoxite's URL scheme like
+this:
+```
+knoxite repo init -r backblaze://[keyID]:[applicationKey]@/desired/path
+```
+
+#### Create a new Application
+
+To gather the **KeyID** and **applicationKey** you'll have to login to your
+account on [backblaze](https://www.backblaze.com) and go to the **App Keys**
+section. There you can click on the **Add a New Application Key** Button.
+
+![add application key](/images/backends/backblaze_add_application_key_focus.png)
+
+After that you'll just need to fill in the name for your new application.
+Optionally you can only allow access to certain buckets.
+
+![create new key](/images/backends/backblaze_create_new_key_focus.png)
+
+The generated **applicationKey** and **keyID** can now be used in knoxite's URL
+scheme.
+
+![created key](/images/backends/backblaze_key_created_focus.png)
+
+Note that the application key will only appear here once. Make sure to store it in a
+secure place.
+
 ---
 
 ### Dropbox
