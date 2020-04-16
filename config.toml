@@ -38,11 +38,11 @@ lastmod = ["lastmod", ":git", "date"]
 
   # Piwik tracking
   [params.analytics.piwik]
-    url = ""
-    id = ""
+    url = "https://matomo.fribbledom.com"
+    id = "1"
     #domain = "" # Track subdomains via "*.example.com"
     # Optional hash for integrity check
-    hash = "sha512-RfeD0pacGTqy9m7U6PgehQfS4cc7SIt+e+P+H5e848kEvB/RW84CUGO3O4O3LNbxjevym6KPUZ8muPsMrI8WIw=="
+    #hash = "sha512-RfeD0pacGTqy9m7U6PgehQfS4cc7SIt+e+P+H5e848kEvB/RW84CUGO3O4O3LNbxjevym6KPUZ8muPsMrI8WIw=="
 
   # Optional, global disable switch for fontawesome related files
   # For custom fontawesome js files use the custom.js method
