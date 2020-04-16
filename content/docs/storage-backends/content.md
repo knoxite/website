@@ -209,12 +209,12 @@ target folder for the repository in Dropbox.
 ##### Basic Example
 
 ```
-knoxite repo init -r webdavs://user@password@webdavhost.com/path/to/repo
+knoxite repo init -r webdavs://user:password@webdavhost.com/path/to/repo
 ```
 
 ##### Nextcloud and ownCloud Example
 
 ```
-knoxite repo init -r webdavs://user@password@knoxitecloud.com/remote.php/webdav/path/to/repo
+knoxite repo init -r webdavs://user:password@knoxitecloud.com/remote.php/webdav/path/to/repo
 ```
 </p>
