@@ -67,19 +67,19 @@ In order to use Azure File Storage you need to add a resource of the type
 **Storage account - blob, file, table, queue**. Then we can use the
 `Storage Explorer` to create a new **File Share**.
 
-![create file storage](/images/backends/azure_create_file_storage_focus.png)
+{{<lbimg src="/images/backends/azure_create_file_storage_focus.png" title="create file storage">}}
 
 After that we can set **Name** and **Quota**. Always keep an eye on your qouta
 because knoxite may fail to store files when the maximum is reached.
 
-![set filestore name and quota](/images/backends/azure_create_file_storage_2_focus.png)
+{{<lbimg src="/images/backends/azure_create_file_storage_2_focus.png" title="set filestore name and quota">}}
 
 The next step is to create the root folder for your knoxite repository.
 Use the **New Folder** button to add a new folder in the created file share. You
 can use the **Copy URL**-button to get the endpoint needed for the azurefile URL
 scheme.
 
-![create folder and copy url](/images/backends/azure_create_folder_copy_url_focus.png)
+{{<lbimg src="/images/backends/azure_create_folder_copy_url_focus.png" title="create folder and copy url">}}
 
 The last missing parameters to fill into the URL scheme are the
 **Storage account name** and one of the **Access keys** which you can easily
@@ -108,17 +108,17 @@ To gather the **KeyID** and **applicationKey** you'll have to login to your
 account on [backblaze](https://www.backblaze.com) and go to the **App Keys**
 section. There you can click on the **Add a New Application Key** Button.
 
-![add application key](/images/backends/backblaze_add_application_key_focus.png)
+{{<lbimg src="/images/backends/backblaze_add_application_key_focus.png" title="add application key">}}
 
 After that you'll just need to fill in the name for your new application.
 Optionally you can only allow access to certain buckets.
 
-![create new key](/images/backends/backblaze_create_new_key_focus.png)
+{{<lbimg src="/images/backends/backblaze_create_new_key_focus.png" title="create new key">}}
 
 The generated **applicationKey** and **keyID** can now be used in knoxite's URL
 scheme.
 
-![created key](/images/backends/backblaze_key_created_focus.png)
+{{<lbimg src="/images/backends/backblaze_key_created_focus.png" title="created key">}}
 
 Note that the application key will only appear here once. Make sure to store it in a
 secure place.
@@ -147,19 +147,19 @@ can either grant knoxite full access to all folders on Dropbox or access to
 a single folder dedicated for it. Note that the name of your app has to be
 unique.
 
-![create app](/images/backends/dropbox_create_new_app_focus.png)
+{{<lbimg src="/images/backends/dropbox_create_new_app_focus.png" title="create app">}}
 
 After creating the app you'll land on its info page. Here you'll need to
 generate the OAuth 2 access-token for knoxite. This can be done with a single
 click on the corresponding button.
 
-![generate token](/images/backends/dropbox_generate_access_token_focus.png)
+{{<lbimg src="/images/backends/dropbox_generate_access_token_focus.png" title="generate token">}}
 
 This generated token can now be used in knoxite's URL scheme. It's better to
 save this token in a secure place as Dropbox's interface will not redisplay it
 (but you can always generate a new one for the app).
 
-![generated token](/images/backends/dropbox_generated_access_token_focus.png)
+{{<lbimg src="/images/backends/dropbox_generated_access_token_focus.png" title="generated token">}}
 
 ---
 

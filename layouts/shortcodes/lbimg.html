@@ -1,0 +1,7 @@
+{{ if .Get "centered" }} <div class="center">{{end}}
+<figure class="lb {{.Get "class"}}">
+<a href="{{ .Get "src" }}" data-lightbox="{{ .Get "src" }}" data-title="{{ .Get "title" }}" class="lb">
+<img class="lb" src="{{ .Get "src" }}" alt="{{ .Get "title" }}" {{ with .Get "width"}} width="{{.}}" {{ end }} />
+</a>
+</figure>
+{{ if .Get "centered"  }} </div>{{end}}
