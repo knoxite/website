@@ -147,19 +147,19 @@ can either grant knoxite full access to all folders on Dropbox or access to
 a single folder dedicated for it. Note that the name of your app has to be
 unique.
 
-![create app](/images/backends/dropbox_create_app.png)
+![create app](/images/backends/dropbox_create_new_app_focus.png)
 
 After creating the app you'll land on its info page. Here you'll need to
 generate the OAuth 2 access-token for knoxite. This can be done with a single
 click on the corresponding button.
 
-![generate token](/images/backends/dropbox_generate_token.png)
+![generate token](/images/backends/dropbox_generate_access_token_focus.png)
 
 This generated token can now be used in knoxite's URL scheme. It's better to
 save this token in a secure place as Dropbox's interface will not redisplay it
 (but you can always generate a new one for the app).
 
-![generated token](/images/backends/dropbox_generated_token.png)
+![generated token](/images/backends/dropbox_generated_access_token_focus.png)
 
 ---
 
