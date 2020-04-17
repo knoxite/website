@@ -85,7 +85,7 @@ The last missing parameters to fill into the URL scheme are the
 **Storage account name** and one of the **Access keys** which you can easily
 copy from Settings > Access keys.
 
-![get credentials](/images/backends/azure_access_keys_focus.png)
+{{<lbimg src="/images/backends/azure_access_keys_focus.png" title="get credentials">}}
 
 ---
 
