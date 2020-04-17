@@ -1,2 +1,26 @@
 <link rel="stylesheet" href="{{ "css/lightbox.min.css" | relURL }}">
 <script src="{{ "js/lightbox-plus-jquery.min.js" | relURL }}"></script>
+<style>
+#lightboxOverlay { 
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100% !important;
+    width: 100% !important;
+    transition: top 0.3s;
+}
+#lightbox { 
+    position: fixed !important;
+    top: 50% !important;
+    transform: translateY(-50%);
+    transition: transform 0.3s 0.3s linear top 0.3s;
+}
+</style>
+<script>
+    lightbox.option({
+        'fadeDuration': 200,
+        'imageFadeDuration': 200,
+        'disableScrolling': true,
+        'fitImagesInViewport': true
+    })
+</script>
