@@ -22,7 +22,8 @@ The last week we achieved some cool changes we want to talk about:
 
 ## On the development-side of things...
 
- - We now have a WebDav / Next-/OwnCloud Storage Backend thanks to @craftamap
+ - We now have a WebDav-Backend, which also allows connecting to OwnCloud- and
+   NextCloud-Instances thanks to @craftamap
  - We now have a Microsoft Azure File Storage Backend thanks to @mahartma
  - You now can use the `-c`/`--exclude` flag for restoring thanks to @penguwin
  - We now have a go-releaser config thanks to @muesli
@@ -30,17 +31,16 @@ The last week we achieved some cool changes we want to talk about:
 
 ## On the "meta"-side of things...
 
-Thanks to the afford of the whole team, we managed to jump-start our webpage
+Thanks to the effort of the whole team, we managed to jump-start our webpage
 [knoxite.com](https://knoxite.com) within a few days.
 
 ![Screenshot of our website](/images/2020/15/week15_webpage_landing_page.png)
 
-It does not only contain the information about the project itself, but we also
-put up a "getting started"-guide.
+It does not only contain the information about the project itself, we also put
+up a "getting started"-guide.
 
-You also now always find the current status of the documentation on our website.
-
+From now on you can always find the current state of the
+documentation on our website.
 
 This should be everything for this week. Thanks for checking out this blogpost
 and good bye!
-
