@@ -196,8 +196,54 @@ knoxite repo init -r sftp://user:password@knoxitessh.com:/path/to/repo
 ```
 
 ---
+### NextCloud
 
-### WebDAV (Nextcloud, ownCloud, ...)
+In order to use knoxite with NextCloud, we will use the WebDav backend.
+
+It is recommended to use a app password with knoxite. To generate a app password, 
+first, go to the settings page of your NextCloud instance. Navigate to the 
+Security-Section. In "Devices & sessions" you can generate a app password.
+
+{{<lbimg src="/images/backends/owncloud_nextcloud/nextcloud_apppassword_step1.png">}}
+
+Save the application password to a save location, as it only can be shown once.
+
+{{<lbimg src="/images/backends/owncloud_nextcloud/nextcloud_apppassword_step2.png">}}
+
+If you want to save your knoxite repository to a directory, now is the time to 
+create the path.
+
+Next, we have to get the WebDav-URL of your NextCloud Instance and modify the 
+url a bit. Go to your file overview and click on the settings-button in the bottom 
+left. A menu containing the WebDav-URL should appear:
+
+{{<lbimg src="/images/backends/owncloud_nextcloud/nextcloud_webdav_path.png">}}
+
+Copy the WebDav-URL and modify it by the following rules:
+
+- replace the `http`/`https` with `webdav`/`webdavs`
+- add your username and your password to the path
+- add the subdirectory to the path, if you want 
+
+```
+webdavs://user:password@knoxitecloud.com/remote.php/webdav/path/to/repo
+```
+
+The URL can now be used to initilize a repo:
+
+```
+knoxite repo init -r webdavs://user:password@knoxitecloud.com/remote.php/webdav/path/to/repo
+```
+
+---
+
+### OwnCloud
+
+See [Nextcloud](#nextcloud)
+
+---
+
+### WebDAV
 
 Although the WebDAV-backend should be compatible with every WebDAV server, right
 now it is only tested with Nextcloud and ownCloud.
@@ -206,15 +252,8 @@ You have to replace the `http` / `https` protocol in the URL with `webdav` /
 `webdavs`. Authentication works via basic/digest auth. You have to create the
 target folder for the repository in Dropbox.
 
-##### Basic Example
-
 ```
 knoxite repo init -r webdavs://user:password@webdavhost.com/path/to/repo
 ```
 
-##### Nextcloud and ownCloud Example
-
-```
-knoxite repo init -r webdavs://user:password@knoxitecloud.com/remote.php/webdav/path/to/repo
-```
 </p>
