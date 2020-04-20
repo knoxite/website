@@ -21,7 +21,7 @@ title = "Storage Backends"
 ### Azure File Storage
 
 In order to store data on Azure you need to set up a file storage for your
-knoxite repository first. Then we use the knoxite URL scheme in order to
+knoxite repository first. You can then use the knoxite URL scheme in order to
 interact with the backend.
 
 #### URL Scheme
@@ -64,28 +64,28 @@ azurefile://knoxitetest:DbxvVZMMzXWqEykTupObp9aD%2Fz7UH1TyO2NAeZpU1klkUut4SEtOCC
 
 #### Setting up your Azure File Storage
 In order to use Azure File Storage you need to add a resource of the type
-**Storage account - blob, file, table, queue**. Then we can use the
+**Storage account - blob, file, table, queue**. Then you can use the
 `Storage Explorer` to create a new **File Share**.
 
-{{<lbimg src="/images/backends/azure_create_file_storage_focus.png" title="create file storage">}}
+{{<lbimg src="/images/backends/azure/azure_create_file_storage_focus.png" title="create file storage">}}
 
-After that we can set **Name** and **Quota**. Always keep an eye on your qouta
+After that you can set **Name** and **Quota**. Always keep an eye on your qouta
 because knoxite may fail to store files when the maximum is reached.
 
-{{<lbimg src="/images/backends/azure_create_file_storage_2_focus.png" title="set filestore name and quota">}}
+{{<lbimg src="/images/backends/azure/azure_create_file_storage_2_focus.png" title="set filestore name and quota">}}
 
 The next step is to create the root folder for your knoxite repository.
 Use the **New Folder** button to add a new folder in the created file share. You
 can use the **Copy URL**-button to get the endpoint needed for the azurefile URL
 scheme.
 
-{{<lbimg src="/images/backends/azure_create_folder_copy_url_focus.png" title="create folder and copy url">}}
+{{<lbimg src="/images/backends/azure/azure_create_folder_copy_url_focus.png" title="create folder and copy url">}}
 
 The last missing parameters to fill into the URL scheme are the
 **Storage account name** and one of the **Access keys** which you can easily
 copy from Settings > Access keys.
 
-{{<lbimg src="/images/backends/azure_access_keys_focus.png" title="get credentials">}}
+{{<lbimg src="/images/backends/azure/azure_access_keys_focus.png" title="get credentials">}}
 
 ---
 
@@ -108,17 +108,17 @@ To gather the **KeyID** and **applicationKey** you'll have to login to your
 account on [backblaze](https://www.backblaze.com) and go to the **App Keys**
 section. There you can click on the **Add a New Application Key** Button.
 
-{{<lbimg src="/images/backends/backblaze_add_application_key_focus.png" title="add application key">}}
+{{<lbimg src="/images/backends/backblaze/backblaze_add_application_key_focus.png" title="add application key">}}
 
 After that you'll just need to fill in the name for your new application.
 Optionally you can only allow access to certain buckets.
 
-{{<lbimg src="/images/backends/backblaze_create_new_key_focus.png" title="create new key">}}
+{{<lbimg src="/images/backends/backblaze/backblaze_create_new_key_focus.png" title="create new key">}}
 
 The generated **applicationKey** and **keyID** can now be used in knoxite's URL
 scheme.
 
-{{<lbimg src="/images/backends/backblaze_key_created_focus.png" title="created key">}}
+{{<lbimg src="/images/backends/backblaze/backblaze_key_created_focus.png" title="created key">}}
 
 Note that the application key will only appear here once. Make sure to store it in a
 secure place.
@@ -147,23 +147,96 @@ can either grant knoxite full access to all folders on Dropbox or access to
 a single folder dedicated for it. Note that the name of your app has to be
 unique.
 
-{{<lbimg src="/images/backends/dropbox_create_new_app_focus.png" title="create app">}}
+{{<lbimg src="/images/backends/dropbox/dropbox_create_new_app_focus.png" title="create app">}}
 
 After creating the app you'll land on its info page. Here you'll need to
 generate the OAuth 2 access-token for knoxite. This can be done with a single
 click on the corresponding button.
 
-{{<lbimg src="/images/backends/dropbox_generate_access_token_focus.png" title="generate token">}}
+{{<lbimg src="/images/backends/dropbox/dropbox_generate_access_token_focus.png" title="generate token">}}
 
 This generated token can now be used in knoxite's URL scheme. It's better to
 save this token in a secure place as Dropbox's interface will not redisplay it
 (but you can always generate a new one for the app).
 
-{{<lbimg src="/images/backends/dropbox_generated_access_token_focus.png" title="generated token">}}
+{{<lbimg src="/images/backends/dropbox/dropbox_generated_access_token_focus.png" title="generated token">}}
 
 ---
 
 ### FTP
+
+---
+
+
+### Google Cloud Storage
+This backend enables knoxite to store data in a Google Cloud Storage bucket.
+If you are not familiar with Google Cloud Console, see the detailled guide below in the **Setting up Google Cloud Storage** section.
+
+
+#### URL Scheme
+You can create a repository using the **googlecloudstorage** URL scheme:
+
+```
+knoxite repo init -r googlecloudstorage://[path_to_key.json]@/[bucket]/[desired_path]/
+```
+
+{{% note %}}
+**Note:** 
+
+Be aware that the **path to the key** needs to be **url-encoded**.
+{{% /note %}}
+
+
+##### JSON key
+As already mentioned, Google Cloud expects credentials in form of a JSON key. 
+The path to the JSON file, probably stored on your local filesystem, either needs to be provided via the URL scheme or the `GOOGLE_APPLICATION_CREDENTIALS` environment variable.
+
+Unlike the parameter in the URL scheme, the path in the environment variable does **not** need to be url encoded.
+
+When using the environment variable, the path can be left out in the URL scheme as in the second example below.
+
+##### Examples
+```
+knoxite -r googlecloudstorage://%2Fhome%2F.knoxite%2Fknoxite-demo-733f1cccf67c.json@/knoxite-demo/backups/ repo init
+```
+```
+knoxite -r googlecloudstorage:///knoxite-demo/backups/ repo init
+```
+
+#### Setting up Google Cloud Storage
+There are multiple steps necessary to set your environment up on Google Cloud Console
+
+##### Start a project
+In case of being new to Google Cloud Storage, you need to create a project first. This project will be the container for the Google Cloud Storage you want to use.
+
+##### Create a bucket
+To create a bucket you need to navigate to **Storage > Browser** and create the bucket. The preferences chosen for this demo are just an example but might be a fit for backups that you only access occasionally.
+{{<lbimg src="/images/backends/googlecloud/focus/gcloud_create_bucket1_focus.png" title="create bucket part 1">}}
+{{<lbimg src="/images/backends/googlecloud/focus/gcloud_create_bucket2_focus.png" title="create bucket part 2">}}
+
+##### Create a folder for your repository within the bucket
+After creating a bucket you need to add a folder, which will be used to store the repository in.
+{{<lbimg src="/images/backends/googlecloud/focus/gcloud_create_folder_focus.png" title="create folder in bucket">}}
+
+##### Add a service account
+In order to access the bucket through the knoxite backend you need a service account. 
+
+Therefore you need to navigate to **IAM & Admin > Service Accounts** and create a new service account.
+{{<lbimg src="/images/backends/googlecloud/focus/gcloud_serviceaccount_create_focus.png" title="create service account">}}
+
+##### Grant access
+For the service account to be permitted to access the bucket, you need to grant access to the project. For testing purposes we choose the Storage Admin role here. For production use we recommend to set specific roles that fit your needs.
+{{<lbimg src="/images/backends/googlecloud/focus/gcloud_serviceaccount_grantaccess_focus.png" title="create service account grant access">}}
+
+##### Create and download the key
+In the last step of creating the service account you need to create a key. You will need this key to use the Knoxite Google Cloud Storage backend.
+{{<lbimg src="/images/backends/googlecloud/focus/gcloud_serviceaccount_finish_createkey_focus.png" title="create service account create key">}}
+
+There is only a one-time chance to download this key, so we recommend you to store it at a safe place in your filesystem. (Of course you are able to create a new one later)
+
+With the downloaded key you are now ready to use the Google Cloud Storage backend via the knoxite URL scheme.
+
+{{<lbimg src="/images/backends/googlecloud/focus/gcloud_serviceaccount_createkey_focus.png" title="create service account download key">}}
 
 ---
 
@@ -174,12 +247,24 @@ save this token in a secure place as Dropbox's interface will not redisplay it
 ### Mega
 
 To store data on mega you need a mega account and its e-mail address and
-password. You can use the knoxite URL scheme in order to interact with this
-backend. Currently the e-mail address needs to be url-encoded.
+password. 
 
+#### URL Scheme
+You can use the knoxite URL scheme in order to interact with this
+backend. 
 
+{{% note %}}
+**Note:** 
+
+Be aware that the **e-mail address** needs to be **url-encoded**.
+{{% /note %}}
 ```
-knoxite repo init -r mega://example%40knoxite.com:password@/desired/path
+knoxite repo init -r mega://[mail-address]:[password]@/desired/path
+```
+
+##### Example
+```
+knoxite repo init -r mega://team%40knoxite.com:securePassword123@/knoxite-demo/backup
 ```
 
 ---
@@ -198,7 +283,7 @@ knoxite repo init -r sftp://user:password@knoxitessh.com:/path/to/repo
 ---
 ### NextCloud
 
-In order to use knoxite with NextCloud, we will use the WebDav backend.
+In order to use knoxite with NextCloud, you need to use the WebDav backend.
 
 It is recommended to use a app password with knoxite. To generate a app password, 
 first, go to the settings page of your NextCloud instance. Navigate to the 
@@ -213,7 +298,7 @@ Save the application password to a save location, as it only can be shown once.
 If you want to save your knoxite repository to a directory, now is the time to 
 create the path.
 
-Next, we have to get the WebDav-URL of your NextCloud Instance and modify the 
+Next, you have to get the WebDav-URL of your NextCloud Instance and modify the 
 url a bit. Go to your file overview and click on the settings-button in the bottom 
 left. A menu containing the WebDav-URL should appear:
 
