@@ -20,12 +20,12 @@ title = "Storage Backends"
 
 ### Azure File Storage
 
-In order to store data on Azure you need to set up a file storage for your
-knoxite repository first.
+In order to store data on Azure you need to set up an Azure File Storage for
+your knoxite repository first.
 
 #### URL Scheme
 
-You can create a repository using the `azurefile` protocol:
+You can create a repository using knoxite's `azurefile` protocol:
 
 ```bash
 knoxite repo init -r azurefile://[storage_account_name]:[access_key]@[endpoint]
@@ -137,8 +137,8 @@ storage.
 
 ##### Usage
 
-You'll need to provide an OAuth2 access-token in the repository-URL in order to
-work with the Dropbox storage backend:
+You'll need to provide an OAuth2 access-token in the repository-URL in order for
+the Dropbox storage backend to work:
 
 ```bash
 knoxite repo init -r dropbox://[access_token]@/[path]
@@ -154,13 +154,13 @@ to be unique.
 
 {{<lbimg src="/images/backends/dropbox/dropbox_create_new_app_focus.png" title="create app">}}
 
-After creating the app you'll land on its info page. Here you'll need to
-generate the OAuth 2 access-token for knoxite. This can be done with a single
-click on the corresponding button:
+After creating the app Dropbox will redirect you to its info page. Here you will
+have to generate the OAuth2 access-token for knoxite. This can be done with a
+single click on the corresponding button:
 
 {{<lbimg src="/images/backends/dropbox/dropbox_generate_access_token_focus.png" title="generate token">}}
 
-This access-token can now be used in knoxite's repository-URL. It's recommended
+This access-token can now be used in knoxite's repository-URL. It is recommended
 to save the token in a secure place as Dropbox will only show it to you once.
 You can however always generate a new token.
 
@@ -305,10 +305,10 @@ knoxite repo init -r mega://user%40example.com:password@/knoxite
 
 ### Nextcloud
 
-You can use the WebDAV backend to connect knoxite to a Nextcloud instance.
+You can connect knoxite to a Nextcloud instance using the WebDAV backend.
 
-It is recommended to use an app password. To generate an app password, go to the
-settings page of your Nextcloud instance. Navigate to the **Security** section. In
+It is recommended to use an app password. To generate one, go to the settings
+page of your Nextcloud instance. Navigate to the **Security** section. In
 **Devices & sessions** you can generate a new app password.
 
 {{<lbimg src="/images/backends/owncloud_nextcloud/nextcloud_apppassword_step1.png">}}
@@ -318,7 +318,7 @@ Save the application password in a secure location, as it can only be shown once
 {{<lbimg src="/images/backends/owncloud_nextcloud/nextcloud_apppassword_step2.png">}}
 
 If you want to save your knoxite repository in a directory, now is the time to
-create the folder.
+create that folder.
 
 Next, you have to get the WebDAV-URL of your Nextcloud instance and modify the
 URL a bit. Go to your file overview and click on the settings button in the
@@ -331,7 +331,7 @@ Copy the WebDAV-URL and modify it by the following rules:
 - replace the `http` / `https` protocol with `webdav` / `webdavs`
 - add your username and password to the URL
 
-The URL can now be used to initialize a repo:
+The URL can now be used to initialize a new repository:
 
 ```bash
 knoxite repo init -r webdavs://[user]:[password]@example.com/remote.php/webdav/[path]
@@ -365,7 +365,7 @@ now it is only tested with Nextcloud and ownCloud.
 
 You have to replace the `http` / `https` protocol in the URL with `webdav` /
 `webdavs`. Authentication works via basic/digest auth. You have to create the
-target folder for the repository in Dropbox.
+target folder for the repository on WebDAV.
 
 ```bash
 knoxite repo init -r webdavs://[user]:[password]@example.com/[path]
