@@ -79,8 +79,8 @@ because knoxite may fail to store files when the maximum is reached.
 
 The next step is to create the root folder for your knoxite repository.
 Use the **New Folder** button to add a new folder in the created file share. You
-can use the **Copy URL** button to get the endpoint needed for the azurefile URL
-scheme.
+can use the **Copy URL** button to get the endpoint needed for the azurefile
+repository-URL.
 
 {{<lbimg src="/images/backends/azure/azure_create_folder_copy_url_focus.png" title="create folder and copy url">}}
 
@@ -109,19 +109,19 @@ knoxite repo init -r backblaze://[keyID]:[applicationKey]@/[path]
 
 #### Create a new Application
 
-To gather the **KeyID** and **applicationKey** you'll have to login to your
+To gather the **keyID** and **applicationKey** you'll have to login to your
 account on [backblaze](https://www.backblaze.com) and go to the **App Keys**
 section. There you can click on the **Add a New Application Key** Button.
 
 {{<lbimg src="/images/backends/backblaze/backblaze_add_application_key_focus.png" title="add application key">}}
 
-After that you'll just need to fill in the name for your new application.
-Optionally you can only allow access to certain buckets.
+After that you'll just need to fill in a name for your new application.
+Optionally you can limit access to certain buckets.
 
 {{<lbimg src="/images/backends/backblaze/backblaze_create_new_key_focus.png" title="create new key">}}
 
-The generated **applicationKey** and **keyID** can now be used in knoxite's URL
-scheme.
+The generated **applicationKey** and **keyID** can now be used as part of the
+repository-URL.
 
 {{<lbimg src="/images/backends/backblaze/backblaze_key_created_focus.png" title="created key">}}
 
