@@ -167,7 +167,6 @@ save this token in a secure place as Dropbox's interface will not redisplay it
 
 ---
 
-
 ### Google Cloud Storage
 This backend enables knoxite to store data in a Google Cloud Storage bucket.
 If you are not familiar with Google Cloud Console, see the detailled guide below
@@ -186,7 +185,6 @@ knoxite repo init -r googlecloudstorage://[path_to_key.json]@/[bucket]/[desired_
 
 Be aware that the **path to the key** needs to be **url-encoded**.
 {{% /note %}}
-
 
 ##### JSON key
 As already mentioned, Google Cloud expects credentials in form of a JSON key.
@@ -287,18 +285,6 @@ knoxite repo init -r mega://team%40knoxite.com:securePassword123@/knoxite-demo/b
 
 ---
 
-### SSH/SFTP
-
-In order to store data on another computer with SSH, you can use the SFTP
-backend. You have to authenticate via password, or via private key using
-an `ssh-agent` (make sure to check if `$SSH_AUTH_SOCK` is set). Verify that
-`~/.ssh/known_hosts` contains a valid host key.
-
-```
-knoxite repo init -r sftp://user:password@knoxitessh.com:/path/to/repo
-```
-
----
 ### Nextcloud
 
 In order to use knoxite with Nextcloud, you need to use the WebDAV backend.
@@ -342,7 +328,20 @@ knoxite repo init -r webdavs://user:password@knoxitecloud.com/remote.php/webdav/
 
 ### ownCloud
 
-See [Nextcloud](#nextcloud)
+See [Nextcloud](#nextcloud).
+
+---
+
+### SSH/SFTP
+
+In order to store data on another computer with SSH, you can use the SFTP
+backend. You have to authenticate via password, or via private key using
+an `ssh-agent` (make sure to check if `$SSH_AUTH_SOCK` is set). Verify that
+`~/.ssh/known_hosts` contains a valid host key.
+
+```
+knoxite repo init -r sftp://user:password@knoxitessh.com:/path/to/repo
+```
 
 ---
 
