@@ -49,20 +49,13 @@ The endpoint is the URL of the folder you want your repository stored in.
 The storage account name as a prefix of the URL is optional, so you can use
 either one of the following formats:
 
-```bash
-[storage_account_name].file.core.windows.net/[share]/[path]
-```
-
-or
-
-```bash
-file.core.windows.net/[share]/[path]
-```
+`[account].file.core.windows.net/[share]/[path]` or
+`file.core.windows.net/[share]/[path]`
 
 ##### Example
 
 ```
-azurefile://user:DbxvVZMMzXWqEykTupObp9aD%2Fz7UH1TyO2NAeZpU1klkUut4SEtOCCEOfp42%2FQLXYKRgmDUUwjzi4XJTe1nB6w%3D%3D@file.core.windows.net/path/to/repo
+azurefile://account:Dbx...%2Fz7U...%2FQLX...B6w%3D%3D@file.core.windows.net/share/path
 ```
 
 #### Setting up your Azure File Storage
@@ -208,8 +201,8 @@ shown in the second example below.
 ##### Examples
 
 ```bash
-knoxite repo init -r googlecloudstorage://%2Fhome%2Fknoxite%2Fknoxite-demo-733f1cccf67c.json@/knoxite-demo/backups/
-knoxite repo init -r googlecloudstorage:///knoxite-demo/backups/
+knoxite repo init -r googlecloudstorage://%2Ftmp%2Fknoxite-733f1cccf67c.json@/knoxite/backups/
+knoxite repo init -r googlecloudstorage:///knoxite/backups/
 ```
 
 #### Setting up Google Cloud Storage
