@@ -27,7 +27,7 @@ interact with the backend.
 #### URL Scheme
 You can create a repository using the **azurefile** URL scheme:
 
-```
+```bash
 knoxite repo init -r azurefile://[storage_account_name]:[access_key]@[endpoint]
 ```
 
@@ -100,8 +100,9 @@ first. Then you can use the applications credentials in knoxites URL scheme.
 
 You can use the **backblaze** B2 Cloud Storage in knoxite's URL scheme like
 this:
-```
-knoxite repo init -r backblaze://[keyID]:[applicationKey]@/path/to/repo
+
+```bash
+knoxite repo init -r backblaze://[keyID]:[applicationKey]@/[path]
 ```
 
 #### Create a new Application
@@ -137,8 +138,8 @@ storage.
 You'll need to provide the OAuth2 access-token without any username in the
 knoxite URL scheme in order to interact with this backend:
 
-```
-knoxite repo init -r dropbox://[generated_access_token]@/path/to/repo
+```bash
+knoxite repo init -r dropbox://[generated_access_token]@/[path]
 ```
 
 ##### Receive an access token
@@ -178,8 +179,8 @@ in the **Setting up Google Cloud Storage** section.
 #### URL Scheme
 You can create a repository using the **googlecloudstorage** URL scheme:
 
-```
-knoxite repo init -r googlecloudstorage://[path_to_key.json]@/[bucket]/path/to/repo/
+```bash
+knoxite repo init -r googlecloudstorage://[path_to_key.json]@/[bucket]/[path]/
 ```
 
 {{% note %}}
@@ -201,7 +202,8 @@ When using the environment variable, the path can be left out in the URL scheme
 as in the second example below.
 
 ##### Examples
-```
+
+```bash
 knoxite repo init -r googlecloudstorage://%2Fhome%2Fknoxite%2Fknoxite-demo-733f1cccf67c.json@/knoxite-demo/backups/
 knoxite repo init -r googlecloudstorage:///knoxite-demo/backups/
 ```
@@ -274,12 +276,14 @@ You can use the knoxite URL scheme in order to interact with this backend.
 
 Be aware that the **e-mail address** needs to be **url-encoded**.
 {{% /note %}}
-```
-knoxite repo init -r mega://[mail-address]:[password]@/path/to/repo
+
+```bash
+knoxite repo init -r mega://[mail-address]:[password]@/[path]
 ```
 
 ##### Example
-```
+
+```bash
 knoxite repo init -r mega://user%40example.com:password@/knoxite
 ```
 
@@ -302,8 +306,8 @@ Save the application password to a save location, as it only can be shown once.
 If you want to save your knoxite repository to a directory, now is the time to
 create the path.
 
-Next, you have to get the WebDAV-URL of your Nextcloud Instance and modify the
-url a bit. Go to your file overview and click on the settings-button in the
+Next, you have to get the WebDAV-URL of your Nextcloud instance and modify the
+url a bit. Go to your file overview and click on the settings button in the
 bottom left. A menu containing the WebDAV-URL should appear:
 
 {{<lbimg src="/images/backends/owncloud_nextcloud/nextcloud_webdav_path.png">}}
@@ -314,14 +318,10 @@ Copy the WebDAV-URL and modify it by the following rules:
 - add your username and your password to the path
 - add the subdirectory to the path, if you want
 
-```
-webdavs://user:password@example.com/remote.php/webdav/path/to/repo
-```
+The URL can now be used to initialize a repo:
 
-The URL can now be used to initilize a repo:
-
-```
-knoxite repo init -r webdavs://user:password@example.com/remote.php/webdav/path/to/repo
+```bash
+knoxite repo init -r webdavs://[user]:[password]@example.com/remote.php/webdav/[path]
 ```
 
 ---
@@ -339,8 +339,8 @@ backend. You have to authenticate via password, or via private key using
 an `ssh-agent` (make sure to check if `$SSH_AUTH_SOCK` is set). Verify that
 `~/.ssh/known_hosts` contains a valid host key.
 
-```
-knoxite repo init -r sftp://[user]:[password]@example.com/path/to/repo
+```bash
+knoxite repo init -r sftp://[user]:[password]@example.com/[path]
 ```
 
 ---
@@ -354,8 +354,8 @@ You have to replace the `http` / `https` protocol in the URL with `webdav` /
 `webdavs`. Authentication works via basic/digest auth. You have to create the
 target folder for the repository in Dropbox.
 
-```
-knoxite repo init -r webdavs://[user]:[password]@example.com/path/to/repo
+```bash
+knoxite repo init -r webdavs://[user]:[password]@example.com/[path]
 ```
 
 </p>
