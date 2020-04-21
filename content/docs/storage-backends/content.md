@@ -315,8 +315,7 @@ bottom left. A menu containing the WebDAV-URL should appear:
 Copy the WebDAV-URL and modify it by the following rules:
 
 - replace the `http` / `https` protocol with `webdav` / `webdavs`
-- add your username and your password to the path
-- add the subdirectory to the path, if you want
+- add your username and password to the URL
 
 The URL can now be used to initialize a repo:
 
