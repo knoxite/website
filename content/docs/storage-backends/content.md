@@ -125,7 +125,7 @@ repository-URL.
 
 {{<lbimg src="/images/backends/backblaze/backblaze_key_created_focus.png" title="created key">}}
 
-Note that the application key will only appear here once. Make sure to store it
+Note that the application key will only be displayed once. Make sure to store it
 in a secure place.
 
 ---
@@ -141,7 +141,7 @@ You'll need to provide an OAuth2 access-token in the repository-URL in order to
 work with the Dropbox storage backend:
 
 ```bash
-knoxite repo init -r dropbox://[generated_access_token]@/[path]
+knoxite repo init -r dropbox://[access_token]@/[path]
 ```
 
 ##### Retrieving an access-token
@@ -194,7 +194,7 @@ Be aware that the **path to the key** needs to be **URL-encoded**.
 
 ##### JSON key
 
-As already mentioned, Google Cloud expects credentials in the form of a JSON key.
+As mentioned above, Google Cloud expects credentials in the form of a JSON key.
 The path to the JSON file, probably stored on your local filesystem, needs to be
 provided either via the URL or the `GOOGLE_APPLICATION_CREDENTIALS` environment
 variable.
@@ -214,7 +214,7 @@ knoxite repo init -r googlecloudstorage:///knoxite-demo/backups/
 
 #### Setting up Google Cloud Storage
 
-There are multiple steps necessary to set your environment up on Google Cloud
+There are multiple steps necessary to set up your environment on Google Cloud
 Console.
 
 ##### Creating a project
@@ -224,9 +224,9 @@ This project will be the container for the Google Cloud Storage you want to use.
 
 ##### Creating a bucket
 
-In order to create a bucket you need to navigate to **Storage > Browser**. The
-preferences chosen here are merely an example, but might be sensible for backups
-that you only access occasionally.
+In order to create a bucket you need to navigate to **Storage** > **Browser**.
+The preferences chosen here are merely an example, but might be sensible for
+backups that you only access occasionally.
 
 {{<lbimg src="/images/backends/googlecloud/focus/gcloud_create_bucket1_focus.png" title="create bucket part 1">}}
 {{<lbimg src="/images/backends/googlecloud/focus/gcloud_create_bucket2_focus.png" title="create bucket part 2">}}
@@ -242,7 +242,8 @@ store the repository in:
 
 In order to access the bucket through knoxite you need a service account.
 
-Navigate to **IAM & Admin > Service Accounts** and create a new service account:
+Navigate to **IAM & Admin** > **Service Accounts** and create a new service
+account:
 
 {{<lbimg src="/images/backends/googlecloud/focus/gcloud_serviceaccount_create_focus.png" title="create service account">}}
 
@@ -261,7 +262,7 @@ will be used to authenticate knoxite to access your cloud storage:
 
 {{<lbimg src="/images/backends/googlecloud/focus/gcloud_serviceaccount_finish_createkey_focus.png" title="create service account create key">}}
 
-You can only download this key once, so we recommend you store it in a safe
+You can only download this key once, so we recommend you store it in a secure
 place. Of course you are always able to create an entirely new key.
 
 With the key downloaded you are now ready to use the Google Cloud Storage
@@ -291,7 +292,7 @@ Be aware that the **e-mail address** needs to be **URL-encoded**.
 {{% /note %}}
 
 ```bash
-knoxite repo init -r mega://[mail-address]:[password]@/[path]
+knoxite repo init -r mega://[email]:[password]@/[path]
 ```
 
 ##### Example
@@ -306,13 +307,13 @@ knoxite repo init -r mega://user%40example.com:password@/knoxite
 
 You can use the WebDAV backend to connect knoxite to a Nextcloud instance.
 
-It is recommended to use a app password. To generate an app password, go to the
+It is recommended to use an app password. To generate an app password, go to the
 settings page of your Nextcloud instance. Navigate to the **Security** section. In
 **Devices & sessions** you can generate a new app password.
 
 {{<lbimg src="/images/backends/owncloud_nextcloud/nextcloud_apppassword_step1.png">}}
 
-Save the application password to a save location, as it only can be shown once.
+Save the application password in a secure location, as it can only be shown once.
 
 {{<lbimg src="/images/backends/owncloud_nextcloud/nextcloud_apppassword_step2.png">}}
 
