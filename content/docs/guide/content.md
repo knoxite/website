@@ -90,6 +90,31 @@ Freed storage space: 23.42 MiB
 ---
 
 ### Volumes
+A repository contains volumes which store your data organized in
+[snapshots](#snapshots).
+
+#### Initializing a volume
+To initialize a volume use the `init` command and provide a name for it:
+```
+$ knoxite volume init "Backups" -d "My system backups"
+Volume 66e03034 (Name: Backups, Description: My system backups) create
+```
+
+Optionally you can provide a further description on the volumes purpose with the
+`-d, --description` flag.
+
+#### List volumes
+You can also `list` all your volumes inside of a repository:
+```
+$ knoxite volume list
+ID        Name                              Description
+--------------------------------------------------------------------------------------------
+da0327e0  Project                           My projects data stored in knoxite
+908b4279  Music                             My music collection stored in knoxite
+990726a7  Pictures                          My pictures stored in knoxite
+```
+
+---
 
 ### Snapshots
 
