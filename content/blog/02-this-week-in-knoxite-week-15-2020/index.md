@@ -10,9 +10,6 @@ summary = "Hello and Welcome to our first ever weekly blog post about the latest
 
 display_date = true
 date = "2020-04-14"
-
-[sidebar]
-  align = "right"
 +++
 
 Hello and Welcome to our first ever weekly blog post about the latest

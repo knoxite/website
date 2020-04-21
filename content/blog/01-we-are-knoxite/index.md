@@ -14,9 +14,6 @@ date = "2020-04-10"
 summary = """
 Just a short 'Hello' from team knoxite!
 """
-
-[sidebar]
-  align = "right"
 +++
 
 Hello from Team Knoxite!
