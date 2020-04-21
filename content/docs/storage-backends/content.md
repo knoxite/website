@@ -265,10 +265,6 @@ backend.
 
 ---
 
-### Google Drive
-
----
-
 ### Mega
 
 To store data on mega you need a mega account and its e-mail address and
