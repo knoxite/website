@@ -22,10 +22,10 @@ There were a lot of exciting changes in the project this week:
 
 ## On the development side of things...
 
- - You can now use a WebDAV-backend, which also allows you to connect to
-   ownCloud and Nextcloud servers (by @craftamap)
+ - You can now use a WebDAV-backend, which also supports ownCloud and Nextcloud
+   servers (by @craftamap)
  - We added a brand-new Microsoft Azure File Storage Backend (by @mahartma)
- - Restoring snapshots now supports the `-c`/`--exclude` flag (by @penguwin)
+ - Restoring snapshots now supports the `-c` / `--exclude` flag (by @penguwin)
  - Binaries and packages are now created with go-releaser (by @muesli)
  - Various other small changes & bugfixes (by @muesli)
 
