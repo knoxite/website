@@ -35,8 +35,8 @@ On Azure you can find the storage account name and the access key at
 **Storage Account** > **Access keys**.
 
 {{% note %}}
-**Note:** Be aware that the access key needs to be **URL-encoded**. So the
-slashes **(/)** and the equals signs **(=)** need to be replaced:
+**Note:** Be aware that the access key needs to be **URL-encoded**. That means
+any slash **(/)** and equals sign **(=)** needs to be replaced:
 
 | CHARACTER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | URL-ENCODING |
 | --------------------------------------------------------------- | ------------ |
