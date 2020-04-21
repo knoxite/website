@@ -46,13 +46,15 @@ slashes **(/)** and the equals signs **(=)** need to be replaced:
 
 ##### Endpoint
 The endpoint is the URL of the folder you want your repository stored in.
-The storage account name as a prefix of the URL is optional, so you can use one
-of the following formats:
+The storage account name as a prefix of the URL is optional, so you can use
+either one of the following formats:
 
 `
 storageaccountname.file.core.windows.net/file_share_name/root_folder
 `
+
 or
+
 `
 file.core.windows.net/file_share_name/root_folder
 `
@@ -99,7 +101,7 @@ first. Then you can use the applications credentials in knoxites URL scheme.
 You can use the **backblaze** B2 Cloud Storage in knoxite's URL scheme like
 this:
 ```
-knoxite repo init -r backblaze://[keyID]:[applicationKey]@/desired/path
+knoxite repo init -r backblaze://[keyID]:[applicationKey]@/path/to/repo
 ```
 
 #### Create a new Application
@@ -136,7 +138,7 @@ You'll need to provide the OAuth2 access-token without any username in the
 knoxite URL scheme in order to interact with this backend:
 
 ```
-knoxite repo init -r dropbox://generated_access_token@/desired/path
+knoxite repo init -r dropbox://[generated_access_token]@/path/to/repo
 ```
 
 ##### Receive an access token
@@ -177,7 +179,7 @@ in the **Setting up Google Cloud Storage** section.
 You can create a repository using the **googlecloudstorage** URL scheme:
 
 ```
-knoxite repo init -r googlecloudstorage://[path_to_key.json]@/[bucket]/[desired_path]/
+knoxite repo init -r googlecloudstorage://[path_to_key.json]@/[bucket]/path/to/repo/
 ```
 
 {{% note %}}
@@ -200,10 +202,8 @@ as in the second example below.
 
 ##### Examples
 ```
-knoxite -r googlecloudstorage://%2Fhome%2F.knoxite%2Fknoxite-demo-733f1cccf67c.json@/knoxite-demo/backups/ repo init
-```
-```
-knoxite -r googlecloudstorage:///knoxite-demo/backups/ repo init
+knoxite repo init -r googlecloudstorage://%2Fhome%2Fknoxite%2Fknoxite-demo-733f1cccf67c.json@/knoxite-demo/backups/
+knoxite repo init -r googlecloudstorage:///knoxite-demo/backups/
 ```
 
 #### Setting up Google Cloud Storage
@@ -275,12 +275,12 @@ You can use the knoxite URL scheme in order to interact with this backend.
 Be aware that the **e-mail address** needs to be **url-encoded**.
 {{% /note %}}
 ```
-knoxite repo init -r mega://[mail-address]:[password]@/desired/path
+knoxite repo init -r mega://[mail-address]:[password]@/path/to/repo
 ```
 
 ##### Example
 ```
-knoxite repo init -r mega://team%40knoxite.com:securePassword123@/knoxite-demo/backup
+knoxite repo init -r mega://user%40example.com:password@/knoxite
 ```
 
 ---
@@ -310,18 +310,18 @@ bottom left. A menu containing the WebDAV-URL should appear:
 
 Copy the WebDAV-URL and modify it by the following rules:
 
-- replace the `http`/`https` with `webdav`/`webdavs`
+- replace the `http` / `https` protocol with `webdav` / `webdavs`
 - add your username and your password to the path
 - add the subdirectory to the path, if you want
 
 ```
-webdavs://user:password@knoxitecloud.com/remote.php/webdav/path/to/repo
+webdavs://user:password@example.com/remote.php/webdav/path/to/repo
 ```
 
 The URL can now be used to initilize a repo:
 
 ```
-knoxite repo init -r webdavs://user:password@knoxitecloud.com/remote.php/webdav/path/to/repo
+knoxite repo init -r webdavs://user:password@example.com/remote.php/webdav/path/to/repo
 ```
 
 ---
@@ -340,7 +340,7 @@ an `ssh-agent` (make sure to check if `$SSH_AUTH_SOCK` is set). Verify that
 `~/.ssh/known_hosts` contains a valid host key.
 
 ```
-knoxite repo init -r sftp://user:password@knoxitessh.com:/path/to/repo
+knoxite repo init -r sftp://[user]:[password]@example.com/path/to/repo
 ```
 
 ---
@@ -355,7 +355,7 @@ You have to replace the `http` / `https` protocol in the URL with `webdav` /
 target folder for the repository in Dropbox.
 
 ```
-knoxite repo init -r webdavs://user:password@webdavhost.com/path/to/repo
+knoxite repo init -r webdavs://[user]:[password]@example.com/path/to/repo
 ```
 
 </p>
