@@ -25,7 +25,7 @@ knoxite repository first.
 
 #### URL Scheme
 
-You can create a repository using the **azurefile** protocol:
+You can create a repository using the `azurefile` protocol:
 
 ```bash
 knoxite repo init -r azurefile://[storage_account_name]:[access_key]@[endpoint]
@@ -35,7 +35,7 @@ On Azure you can find the storage account name and the access key at
 **Storage Account** > **Access keys**.
 
 {{% note %}}
-**Note:** Be aware that the access key needs to be **url-encoded**. So the
+**Note:** Be aware that the access key needs to be **URL-encoded**. So the
 slashes **(/)** and the equals signs **(=)** need to be replaced:
 
 | CHARACTER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | URL-ENCODING |
@@ -100,7 +100,7 @@ repository-URL.
 
 #### URL Scheme
 
-You can use the **backblaze** protocol to initialize a B2 Cloud Storage
+You can use the `backblaze` protocol to initialize a B2 Cloud Storage
 repository:
 
 ```bash
@@ -180,7 +180,7 @@ in the **Setting up Google Cloud Storage** section.
 
 #### URL Scheme
 
-You can create a repository using the **googlecloudstorage** protocol:
+You can create a repository using the `googlecloudstorage` protocol:
 
 ```bash
 knoxite repo init -r googlecloudstorage://[path_to_key.json]@/[bucket]/[path]/
@@ -189,7 +189,7 @@ knoxite repo init -r googlecloudstorage://[path_to_key.json]@/[bucket]/[path]/
 {{% note %}}
 **Note:**
 
-Be aware that the **path to the key** needs to be **url-encoded**.
+Be aware that the **path to the key** needs to be **URL-encoded**.
 {{% /note %}}
 
 ##### JSON key
@@ -200,7 +200,7 @@ provided either via the URL or the `GOOGLE_APPLICATION_CREDENTIALS` environment
 variable.
 
 Unlike the parameter in the URL, the path in the environment variable does
-**not** need to be url encoded.
+**not** need to be URL-encoded.
 
 When using the environment variable the path to the JSON file can be omitted, as
 shown in the second example below.
@@ -287,7 +287,7 @@ You can use the `mega` protocol in order to interact with this backend.
 {{% note %}}
 **Note:**
 
-Be aware that the **e-mail address** needs to be **url-encoded**.
+Be aware that the **e-mail address** needs to be **URL-encoded**.
 {{% /note %}}
 
 ```bash
