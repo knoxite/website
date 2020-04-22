@@ -154,6 +154,14 @@ To do so use the the `-c --compression` option:
 $ knoxite store -c gzip latest data/ -d "Compressed snapshot"
 ```
 
+For a full list of available compression algorithms refer to the `--help` option:
+```
+$ knoxite store --help
+...
+Flags:
+  -c, --compression string     compression algo to use: none (default), flate, gzip, lzma, zlib, zstd
+```
+
 ### Automatic backups
 
 ### Restoring a backup
