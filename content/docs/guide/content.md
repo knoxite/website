@@ -127,6 +127,22 @@ $ knoxite store -e aes latest data/ -d "AES encrypted snapshot"
 ```
 
 ### Fault-Tolerance
+Assuming you've already configured several backends in your repository you can
+consider to set a fault tolerance level agains *n* backend failures with the
+`-t, --tolerance` flag like this:
+```
+$ knoxite store [volume ID] data/ -t 2
+data/document.txt                      5.17 MiB  123.42 MiB/s [#############################] 100.00%
+data/other.txt                         3.55 MiB  420.49 MiB/s [#############################] 100.00%
+8.72 MiB / 8.72 MiB (3 of 3) 126.73 MiB/s [#################################################] 100.00%
+Snapshot c82d256e created: 2 files, 1 dirs, 0 symlinks, 0 errors, 8.72 MiB Original Size, 4.36 MiB Storage Size
+```
+
+In this example two storage backends can be offline and you're still able to
+access all of your data stored in this snapshot. Knoxite verifies that the
+chosen fault tolerance level is **below** the number of configured storage
+backends for the repository. See the [repository](#repositories) section for
+more information on adding storage backends to your repository.
 
 ### Compression
 While storing data into snapshots you can choose to compress your data with
