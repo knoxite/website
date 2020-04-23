@@ -103,7 +103,7 @@ knoxite repo init -r backblaze://[keyID]:[applicationKey]@/[path]
 #### Create a new Application
 
 To gather the **keyID** and **applicationKey** you'll have to login to your
-account on [backblaze](https://www.backblaze.com) and go to the **App Keys**
+account on [Backblaze](https://www.backblaze.com) and go to the **App Keys**
 section. There you can click on the **Add a New Application Key** Button.
 
 {{<lbimg src="/images/backends/backblaze/backblaze_add_application_key_focus.png" title="add application key">}}
