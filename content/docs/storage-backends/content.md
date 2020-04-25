@@ -34,15 +34,7 @@ knoxite repo init -r azurefile://[storage_account_name]:[access_key]@[endpoint]
 On Azure you can find the storage account name and the access key at
 **Storage Account** > **Access keys**.
 
-{{% note %}}
-**Note:** Be aware that the access key needs to be **URL-encoded**. That means
-any slash **(/)** and equals sign **(=)** needs to be replaced:
-
-| CHARACTER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | URL-ENCODING |
-| --------------------------------------------------------------- | ------------ |
-| /                                                               | %2F          |
-| =                                                               | %3D          |
-{{% /note %}}
+{{< note-urlencoded what="the **access token**" >}}
 
 ##### Endpoint
 The endpoint is the URL of the folder you want your repository stored in.
@@ -179,11 +171,7 @@ You can create a repository using the `googlecloudstorage` protocol:
 knoxite repo init -r googlecloudstorage://[path_to_key.json]@/[bucket]/[path]/
 ```
 
-{{% note %}}
-**Note:**
-
-Be aware that the **path to the key** needs to be **URL-encoded**.
-{{% /note %}}
+{{< note-urlencoded what="the **path to the key**" >}}
 
 ##### JSON key
 
@@ -274,11 +262,7 @@ password.
 
 You can use the `mega` protocol in order to interact with this backend.
 
-{{% note %}}
-**Note:**
-
-Be aware that the **e-mail address** needs to be **URL-encoded**.
-{{% /note %}}
+{{< note-urlencoded what="the **e-mail address**" >}}
 
 ```bash
 knoxite repo init -r mega://[email]:[password]@/[path]
