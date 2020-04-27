@@ -136,8 +136,20 @@ data/other.txt                      3.55 MiB  257.24 MiB/s [####################
 Snapshot 13190897 created: 17 files, 2 dirs, 0 symlinks, 0 errors, 1.71 GiB Original Size, 1.42 GiB Storage Size
 ```
 
-Use the `-d, --description` flag in order to describe your changes from snapshot
-to snapshot.
+The `store` command offers a variety of useful flags:
+- `-c, --compression` lets you choose the compression algorithm used to store
+  your data.
+- `-d, --description` can be used to describe changes made from snapshot to
+  snapshot.
+- `-e, --encryption` lets you choose the encryption algorithm.
+- `-t, --tolerance` can be used to set a fault tolerance level against *n*
+  backend failures.
+- `-x, --excludes` lets you choose to exclude files and folders from the
+  snapshot.
+
+Run `snapshot store --help` for further information or see the guide
+sections: [Compression](#compression), [Encryption](#encryption) and
+[Fault-Tolerance](#fault-tolerance)
 
 #### List Snapshots
 You can get an overview of snapshots stored within a volume using the `list`
@@ -182,6 +194,11 @@ other.txt             5.10 MiB / 5.10 MiB [#####################################
 ...
 Snapshot aefc4591 created: 9 files, 8 dirs, 0 symlinks, 0 errors, 1.34 GiB Original Size, 1.34 GiB Storage Size
 ```
+
+The `clone` and `store` commands share the same set of optional command line
+flags. So while cloning you snapshots you can still choose between several
+encryption and compression algorithms, set a fault-tolerance level or exclude
+files and folders.
 
 #### Mounting a snapshot
 You can even mount a snapshot (currently read-only, read-write is
@@ -248,5 +265,7 @@ data/document.txt    5.17 MiB / 5.17 MiB  91.11 MiB/s [#########################
 Restore done: 2 files, 1 dirs, 0 symlinks, 0 errors, 8.72 MiB Original Size, 4.27 MiB Storage Size
 ```
 
+You can prevent restoring unwanted files or directories with the `x, --excludes`
+flag.
 
 </p>
