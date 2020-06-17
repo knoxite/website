@@ -16,6 +16,74 @@ title = "Storage Backends"
 
 ### Amazon S3
 
+In order to use knoxite with AWS S3, you need to set up an IAM-Identity first, 
+as you cannot use S3 as an Root-User. It is also recommended to create an own 
+IAM-Identity for each application. Find more about creating IAM-Identities 
+[here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html) or below.
+
+#### URL Scheme
+
+You can create a repository using knoxites `s3` or `s3s` (for usage with ssl) protocols:
+
+```bash
+knoxite repo init s3s://[username]:[password]@s3.amazonaws.com/[region]/[bucketprefix]
+```
+
+However, it is not considered safe to use username and password here. Instead, 
+it is recommended to use access keys. The access key id as well as the secret 
+access key can then be used by knoxite using the `AWS_ACCESS_KEY_ID` and 
+`AWS_SECRET_ACCESS_KEY` environment variable. See more below on How-To create
+access keys for your IAM-Identity.
+
+
+A repository will be stored as 3 different buckets on S3. Those buckets will be generated automatically.
+The names of the buckets are:
+
+- `[bucketprefix]-chunks`
+- `[bucketprefix]-snapshots`
+- `[bucketprefix]-repository`
+
+All s3 bucket names are unique globally. Therefore, please consider choosing a reasonable
+bucketprefix. See more on restrictions and naming requirements of s3 buckets [here](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-s3-bucket-naming-requirements.html)
+
+
+#### Create an IAM-Identity with an Access Key
+
+For more detailed insight, see the official AWS documentation.
+
+While it is not required to set up an own IAM-Identity for knoxite itself, it 
+is recommended to do so. However, you can also just create an Access Key 
+for you Administrator (or really any other IAM-User with the right permissions).
+
+After logging into the AWS Management Console, go to the IAM-Dashboard:
+
+{{<lbimg src="/images/backends/s3/s3_step1.png" title="open IAM Dashboard">}}
+
+On the IAM-Dashboard, go to Users and add a new user:
+
+{{<lbimg src="/images/backends/s3/s3_step2.png" title="Add new User on IAM Dashboard">}}
+
+Select an username for your knoxite-User. As "Access Type", choose "Programmatic access". Press next.
+
+{{<lbimg src="/images/backends/s3/s3_step3.png" title="Choose username and Access Type">}}
+
+As we only want to use this user to interact with our s3 buckets, select 
+"Attach existing policies directly", search for s3 and select "AmazonS3FullAccess". Press next.
+As I do not want to set any tags, I just continue and press next again.
+
+{{<lbimg src="/images/backends/s3/s3_step4.png" title="Set Permissions">}}
+
+Review the new user and press "Create user".
+
+{{<lbimg src="/images/backends/s3/s3_step5.png" title="Review new user">}}
+
+Now, you can copy the "Access key ID" as well as the "Secret access key" and use
+them with knoxite.
+
+{{<lbimg src="/images/backends/s3/s3_step6.png" title="Review new user">}}
+
+
+
 ---
 
 ### Azure File Storage
