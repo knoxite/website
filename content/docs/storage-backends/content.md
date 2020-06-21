@@ -216,6 +216,8 @@ backups that you only access occasionally.
 
 After creating a bucket you need to add a new folder, which will be used to
 store the repository in:
+Creating the folder manually is optional. Knoxite will automatically create a folder within the existing bucket when using a path with following format: `googlecloudstorage:///[bucketname]/[foldername]`. 
+The location of the repository needs to be a folder inside the bucket, not only the bucket.
 
 {{<lbimg src="/images/backends/googlecloud/focus/gcloud_create_folder_focus.png" title="create folder in bucket">}}
 
