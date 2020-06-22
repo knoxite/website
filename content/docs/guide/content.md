@@ -274,7 +274,7 @@ You can `verify` the integrity of the stored chunks by using the `verify` comman
 Note that `verify` does not check if your repository contains any extra files. It also
 does not check the integrity of the index file.
 
-You cancheck the integrity of an repo, an volume or an snapshot.
+You can check the integrity of an repo, an volume or an snapshot.
 
 To verify an whole repository, just use:
 
