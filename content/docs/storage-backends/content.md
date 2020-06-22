@@ -53,7 +53,7 @@ For more detailed insight, see the official AWS documentation.
 
 While it is not required to set up an own IAM-Identity for knoxite itself, it 
 is recommended to do so. However, you can also just create an Access Key 
-for you Administrator (or really any other IAM-User with the right permissions).
+for your Administrator (or really any other IAM-User with the right permissions).
 
 After logging into the AWS Management Console, go to the IAM-Dashboard:
 
@@ -69,7 +69,7 @@ Select an username for your knoxite-User. As "Access Type", choose "Programmatic
 
 As we only want to use this user to interact with our s3 buckets, select 
 "Attach existing policies directly", search for s3 and select "AmazonS3FullAccess". Press next.
-As I do not want to set any tags, I just continue and press next again.
+If you do not want to set any tags, you can just continue and press next again.
 
 {{<lbimg src="/images/backends/s3/s3_step4.png" title="Set Permissions">}}
 
