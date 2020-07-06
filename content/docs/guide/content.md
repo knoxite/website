@@ -274,9 +274,9 @@ You can `verify` the integrity of the stored chunks by using the `verify` comman
 Note that `verify` does not check if your repository contains any extra files. It also
 does not check the integrity of the index file.
 
-You can check the integrity of an repo, an volume or an snapshot.
+You can check the integrity of a repo, volume, or snapshot.
 
-To verify an whole repository, just use:
+To verify an entire repository, just use:
 
 ```
 $ knoxite verify
@@ -285,7 +285,7 @@ data/document.txt    5.17 MiB / 5.17 MiB  91.11 MiB/s [#########################
 Verify done: 0 errors
 ```
 
-To verify an volume, you have to specify the volume id. However, you can also use `latest`:
+To verify a volume, you have to specify the volume ID:
 
 ```
 $ knoxite verify e41ace59
@@ -294,7 +294,7 @@ data/document.txt    5.17 MiB / 5.17 MiB  91.11 MiB/s [#########################
 Verify done: 0 errors
 ```
 
-And to verify an snapshot, you have to specify the volume id as well as the snapshot id:
+To verify a snapshot, you have to specify the volume ID as well as the snapshot ID:
 
 ```
 $ knoxite verify e41ace59 90e34853
@@ -303,7 +303,7 @@ data/document.txt    5.17 MiB / 5.17 MiB  91.11 MiB/s [#########################
 Verify done: 0 errors
 ```
 
-`verify` only checks an percentage of all files in an repo, volume, or snapshot. 
+`verify` only checks an fraction of all chunks in a repo, volume, or snapshot. 
 This defaults to 70%, but can be changed by using `knoxite verify --percentage [percentage as integer]`
 
 If `verify` finds an error in your repository, it will usually look like this:
