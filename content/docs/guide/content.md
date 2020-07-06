@@ -268,4 +268,51 @@ Restore done: 2 files, 1 dirs, 0 symlinks, 0 errors, 8.72 MiB Original Size, 4.2
 You can prevent restoring unwanted files or directories with the `x, --excludes`
 flag.
 
+### Verify a backup
+
+You can `verify` the integrity of the stored chunks by using the `verify` command. 
+Note that `verify` does not check if your repository contains any extra files. It also
+does not check the integrity of the index file.
+
+You can check the integrity of a repo, volume, or snapshot.
+
+To verify an entire repository, just use:
+
+```
+$ knoxite verify
+data/other.txt       3.55 MiB / 3.55 MiB  69.78 MiB/s [#############################] 100.00%
+data/document.txt    5.17 MiB / 5.17 MiB  91.11 MiB/s [#############################] 100.00%
+Verify done: 0 errors
+```
+
+To verify a volume, you have to specify the volume ID:
+
+```
+$ knoxite verify e41ace59
+data/other.txt       3.55 MiB / 3.55 MiB  69.78 MiB/s [#############################] 100.00%
+data/document.txt    5.17 MiB / 5.17 MiB  91.11 MiB/s [#############################] 100.00%
+Verify done: 0 errors
+```
+
+To verify a snapshot, you have to specify the volume ID as well as the snapshot ID:
+
+```
+$ knoxite verify e41ace59 90e34853
+data/other.txt       3.55 MiB / 3.55 MiB  69.78 MiB/s [#############################] 100.00%
+data/document.txt    5.17 MiB / 5.17 MiB  91.11 MiB/s [#############################] 100.00%
+Verify done: 0 errors
+```
+
+`verify` only checks an fraction of all chunks in a repo, volume, or snapshot. 
+This defaults to 70%, but can be changed by using `knoxite verify --percentage [percentage as integer]`
+
+If `verify` finds an error in your repository, it will usually look like this:
+
+```
+$ knoxite verify
+open /tmp/snapshots/90e34853: no such file or directory
+                                              0B / 0B [#############################] 100.00%
+Verify done: 1 errors
+```
+
 </p>
