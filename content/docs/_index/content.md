@@ -9,7 +9,7 @@ title = "knoxite Documentation"
 Welcome to the knoxite documentation!
 
 To get started, check out our [installation guide]({{< ref "docs/installation">}})
-as well as our ["Getting Started" Guide]({{< ref "docs/installation">}}).
+as well as our ["Getting Started" Guide]({{< ref "docs/getting-started">}}).
 
 You have a question about knoxite which is not included in the documentation? 
 Feel free to contact us on [gitter](https://gitter.im/knoxite/chat).
