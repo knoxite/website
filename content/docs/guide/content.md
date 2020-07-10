@@ -218,6 +218,25 @@ while storing your data.
 $ knoxite store -e aes latest data/ -d "AES encrypted snapshot"
 ```
 
+### Change password
+Since the repository version 4, that came with [PR 116](https://github.com/knoxite/knoxite/pull/116), you can change the password of a repository.
+To make this possible, we've added an encryption key within the encrypted repository file, which your data will be encrypted with.
+Knoxite encrypts the `repository.knoxite` file with the password you set when initializing the repository.
+When you change the repository's password, knoxite just re-encrypts the `repository.knoxite` file with your new password.
+The data will not be re-encrypted with the new password, since it's encrypted with the securely stored encryption key in the `repository.knoxite` file.
+
+#### Compatibility
+If you've already used knoxite before repository version 4 (May 27, 2020), your repository will automatically be migrated from version 3 to 4 when using a newer knoxite version. Knoxite takes your further repository password as the encryption key and stores it in the repository file. The `repository.knoxite` file will also be encrypted with the existing password.
+After the migration succeeded, you can change the repository's password.
+Warning: If you use an insecure password for your repository initially, changing the password will not increase the security level. 
+
+#### Usage
+Use the `repo passwd` command to change the password of your repository.
+```
+$ knoxite -r /tmp/knoxite repo passwd
+```
+Before you enter your new password twice, you will be asked for your old password if you haven't provided it using the `-p | --password` option.
+
 ### Fault-Tolerance
 Assuming you've already configured several backends in your repository you can
 consider to set a fault tolerance level agains *n* backend failures with the
