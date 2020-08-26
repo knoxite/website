@@ -222,6 +222,18 @@ You can however always generate a new token.
 
 ### FTP
 
+Storing data via the File Transfer Protocol is done with this backend. You'll
+have to provide a password and username in order to authenticate to the server.
+When no port address is provided knoxite will use the standard FTP port `21`.
+Replace `example.com` from this example with the address corresponding to your
+desired server.
+
+#### URL Scheme
+The FTP protocol scheme looks like following:
+```bash
+knoxite repo init -r ftp://[user]:[password]@example.com:[port]/[path]
+```
+
 ---
 
 ### Google Cloud Storage
