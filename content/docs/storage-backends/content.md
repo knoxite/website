@@ -29,9 +29,9 @@ You can create a repository using knoxite's `s3` or `s3s` (for usage with SSL) p
 knoxite repo init s3s://[username]:[password]@s3.amazonaws.com/[region]/[bucketprefix]
 ```
 
-However, it is not considered safe to use username and password here. Instead, 
-it is recommended to use access keys. The access key id as well as the secret 
-access key can then be used by knoxite using the `AWS_ACCESS_KEY_ID` and 
+However, it is not considered safe to use username and password here. Instead,
+it is recommended to use access keys. The access key id as well as the secret
+access key can then be used by knoxite using the `AWS_ACCESS_KEY_ID` and
 `AWS_SECRET_ACCESS_KEY` environment variables. You can find more information about
 creating access keys for your IAM-Identity below.
 
@@ -52,8 +52,8 @@ bucketprefix. You can find more information on restrictions and naming requireme
 
 For more detailed instructions, please refer to the official AWS documentation.
 
-While it is not required to set up a separate IAM-Identity for knoxite itself, it 
-is recommended to do so. However, you can also just create an Access Key 
+While it is not required to set up a separate IAM-Identity for knoxite itself, it
+is recommended to do so. However, you can also just create an Access Key
 for your Administrator (or really any other IAM-User with the right permissions).
 
 After logging into the AWS Management Console, go to the IAM-Dashboard:
@@ -68,7 +68,7 @@ Select a username for your knoxite-User. As "Access Type", choose "Programmatic 
 
 {{<lbimg src="/images/backends/s3/s3_step3.png" title="Choose username and Access Type">}}
 
-As we only want to use this user to interact with our s3 buckets, select 
+As we only want to use this user to interact with our s3 buckets, select
 "Attach existing policies directly", search for s3 and select "AmazonS3FullAccess". Press next.
 If you do not want to set any tags, you can just continue and press next again.
 
