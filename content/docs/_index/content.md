@@ -13,7 +13,7 @@ as well as our ["Getting Started" Guide]({{< ref "docs/getting-started">}}).
 To set up a knoxite configuration refer to our [configuration system]({{< ref
 "docs/configuration-system">}}) section.
 
-You have a question about knoxite which is not included in the documentation? 
+You have a question about knoxite which is not included in the documentation?
 Feel free to contact us on [gitter](https://gitter.im/knoxite/chat).
 
 You found an issue with knoxite or want to request a feature? Just open an issue
