@@ -228,7 +228,7 @@ The data will not be re-encrypted with the new password, since it's encrypted wi
 #### Compatibility
 If you've already used knoxite before repository version 4 (May 27, 2020), your repository will automatically be migrated from version 3 to 4 when using a newer knoxite version. Knoxite takes your further repository password as the encryption key and stores it in the repository file. The `repository.knoxite` file will also be encrypted with the existing password.
 After the migration succeeded, you can change the repository's password.
-Warning: If you use an insecure password for your repository initially, changing the password will not increase the security level. 
+Warning: If you use an insecure password for your repository initially, changing the password will not increase the security level.
 
 #### Usage
 Use the `repo passwd` command to change the password of your repository.
@@ -289,7 +289,7 @@ flag.
 
 ### Verify a backup
 
-You can `verify` the integrity of the stored chunks by using the `verify` command. 
+You can `verify` the integrity of the stored chunks by using the `verify` command.
 Note that `verify` does not check if your repository contains any extra files. It also
 does not check the integrity of the index file.
 
@@ -322,7 +322,7 @@ data/document.txt    5.17 MiB / 5.17 MiB  91.11 MiB/s [#########################
 Verify done: 0 errors
 ```
 
-`verify` only checks an fraction of all chunks in a repo, volume, or snapshot. 
+`verify` only checks an fraction of all chunks in a repo, volume, or snapshot.
 This defaults to 70%, but can be changed by using `knoxite verify --percentage [percentage as integer]`
 
 If `verify` finds an error in your repository, it will usually look like this:
