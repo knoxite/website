@@ -5,4 +5,4 @@ title = "Open-Source"
   icon = "fas fa-code-branch"
 +++
 
-knoxite is free software. Contribute and spread the word!
+knoxite is free software. Contribute and spread the world!
