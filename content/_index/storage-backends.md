@@ -28,6 +28,9 @@ title_align = "left" # Default is center, can be left, right or center
     <i class="fab fa-dropbox fa-fw" style="color:lightgrey;"></i>
   </span>
   <span style="font-size: 64px;">
+    <i class="fab fa-microsoft fa-fw" style="color:lightgrey;"></i>
+  </span>
+  <span style="font-size: 64px;">
     <i class="fas fa-cloud-upload-alt fa-fw" style="color:lightgrey;"></i>
   </span>
 
@@ -36,6 +39,6 @@ title_align = "left" # Default is center, can be left, right or center
 +++
 
 <p>You've chosen a cloud provider for your data before? We may already support it!</p>
-<p>Select between various protocols and standards like SSH, WebDAV or FTP or cloud providers like Google Drive, NextCloud, DropBox and many others!</p>
+<p>Select between various protocols and standards like SSH, WebDAV or FTP or cloud providers like Microsoft Azure, Amazon S3, BackBlaze, NextCloud, DropBox and many others!</p>
 
 [<button class="btn btn-success mt-4">See all storage backends</button>](/docs/storage-backends)

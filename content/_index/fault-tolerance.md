@@ -34,10 +34,10 @@ subtitle = "knoxite uses checksums and parity-data to protect your bits & bytes.
             </div>
             <span class="fa-stack fa-2x">
                 <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-google-drive fa-stack-1x fa-inverse color-grey" style="color:grey;"></i>
+                <i class="fab fa-microsoft fa-stack-1x fa-inverse color-grey" style="color:grey;"></i>
             </span>
             <p class="mt-2">
-                Google Drive
+                Microsoft Azure
             </p>
         </div>
         <div class="col-4 p-0 text-center">
