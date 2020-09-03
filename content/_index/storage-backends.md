@@ -28,9 +28,6 @@ title_align = "left" # Default is center, can be left, right or center
     <i class="fab fa-dropbox fa-fw" style="color:lightgrey;"></i>
   </span>
   <span style="font-size: 64px;">
-    <i class="fab fa-google-drive fa-fw" style="color:lightgrey;"></i>
-  </span>
-  <span style="font-size: 64px;">
     <i class="fas fa-cloud-upload-alt fa-fw" style="color:lightgrey;"></i>
   </span>
 
