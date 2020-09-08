@@ -2446,20 +2446,20 @@
 /* Based on Monokai from base16 collection - https://github.com/chriskempson/base16 */
 .asciinema-theme-monokai .asciinema-terminal {
   color: #f8f8f2;
-  background-color: #272822;
-  border-color: #272822;
+  background-color: #343a40;
+  border-color: #343a40;
 }
 .asciinema-theme-monokai .fg-bg {
-  color: #272822;
+  color: #343a40;
 }
 .asciinema-theme-monokai .bg-fg {
   background-color: #f8f8f2;
 }
 .asciinema-theme-monokai .fg-0 {
-  color: #272822;
+  color: #343a40;
 }
 .asciinema-theme-monokai .bg-0 {
-  background-color: #272822;
+  background-color: #343a40;
 }
 .asciinema-theme-monokai .fg-1 {
   color: #f92672;
