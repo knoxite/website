@@ -26,17 +26,13 @@ subtitle = "An open-source data storage & backup system"
   #columns = "" #
 
 [[buttons]]
-  text = "Docs"
-  url = "/docs"
-  color = "primary" # primary, secondary, success, danger, warning, info, light, dark, link - default: primary
-
-[[buttons]]
   text = "Get Started"
   url = "/docs/getting-started"
   color = "primary"
 
 [[buttons]]
-  text = "Blog"
-  url = "/blog"
-  color = "primary"
+  text = "Docs"
+  url = "/docs"
+  color = "primary" # primary, secondary, success, danger, warning, info, light, dark, link - default: primary
+
 +++
