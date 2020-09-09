@@ -26,6 +26,11 @@ subtitle = "An open-source data storage & backup system"
   #columns = "" #
 
 [[buttons]]
+  text = "Download"
+  url = "/docs/installation"
+  color = "primary"
+
+[[buttons]]
   text = "Get Started"
   url = "/docs/getting-started"
   color = "primary"
