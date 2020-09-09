@@ -12,6 +12,6 @@ background = "dark"
 
 # Branding options
 [asset]
-  image = "knoxite-logo.png"
+  image = "knoxite-logo.svg"
   text = "Knoxite logo"
 +++

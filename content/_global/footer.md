@@ -10,7 +10,7 @@ menu_social = "Github"
 
 [asset]
   title = "Knoxite Logo"
-  image = "knoxite-logo.png"
+  image = "knoxite-logo.svg"
   text = "Knoxite Logo"
   url = "#"
 +++

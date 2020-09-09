@@ -12,7 +12,7 @@ subtitle = "An open-source data storage & backup system"
   image = "header.jpg"
 
 [asset]
-  image = "knoxite-logo.png"
+  image = "knoxite-logo-cloud.svg"
   #width = "500px" # optional - will default to image width
   #height = "150px" # optional - will default to image height
 
