@@ -96,10 +96,10 @@ Looking at our configuration again we can see that we have created the shorthand
 
 ```
 
-This shorthand can now further be used in the `-r | --repo` flag while executing
+This shorthand can now further be used in the `-R | --alias` flag while executing
 other commands:
 ```
-$ knoxite -r fort store latest .
+$ knoxite -R fort store latest .
 ...
 ```
 
