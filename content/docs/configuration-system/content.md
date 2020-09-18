@@ -16,21 +16,33 @@ encryption, compression or excludes.
 The `config` command offers a variety of subcommands in order to help you
 managing your configuration.
 
-A configuration is structured in [json](https://json.org) format and looks like
+```
+$ knoxite config --help
+The config command manages the knoxite configuration
+
+Usage:
+  knoxite config [command]
+
+Available Commands:
+  alias       Set an alias for the storage backend url to a repository
+  cat         display the configuration file on stdout
+  convert     convert between several configuration backends
+  info        display information about the configuration file on stdout
+  init        initialize a new configuration
+  set         set configuration values for an alias
+```
+
+A configuration is structured in [toml](https://github.com/toml-lang/toml) format and looks like
 this:
-```json
-{
-    "repositories": {
-        "fort": {
-            "url": "/tmp/knox",
-            "compression": "",
-            "tolerance": 0,
-            "encryption": "",
-            "store_excludes": null,
-            "restore_excludes": null
-        }
-    }
-}
+```toml
+[repositories]
+  [repositories.fort]
+    url = "/tmp/knox"
+    compression = "gzip"
+    tolerance = 0
+    encryption = ""
+    store_excludes = ["dont/store/this/folder*", "and/this/file"]
+    restore_excludes = ["dont/restore/this/folder*"]
 ```
 
 ### Initializing the configuration
@@ -43,10 +55,8 @@ $ knoxite config init
 ```
 
 This will leave us with an empty configuration file:
-```json
-{
-    "repositories": {}
-}
+```toml
+[repositories]
 ```
 
 By default knoxite will use the OS dependant standard paths for this file:
@@ -67,8 +77,8 @@ password part and knoxite will prompt you for it - this is also considered more
 secure.
 Another cool thing is that knoxite will recognize encrypted configuration files
 while trying to read them out. Therefore you can reference them just like a
-normal configuration file - without the `crypto://` protocol prefix - for
-further usage.
+normal configuration file - without the `crypto://` protocol prefix - in further
+usage.
 
 ### Creating an alias
 The `alias` command creates a shorthand for a repository's configuration. In
@@ -78,25 +88,18 @@ this example we're assigning the alias `fort` to the repo located at
 $ knoxite config alias fort -r /tmp/knox
 ```
 
-Looking at our configuration again we can see that we have created the shorthand
+Looking at our configuration again we can see that we've created the shorthand
 `fort` with a configuration profile:
-```json
-{
-    "repositories": {
-        "fort": {
-            "url": "/tmp/knox",
-            "compression": "",
-            "tolerance": 0,
-            "encryption": "",
-            "store_excludes": null,
-            "restore_excludes": null
-        }
-    }
-}
-
+```toml
+[repositories]
+  [repositories.fort]
+    url = "/tmp/knox"
+    compression = ""
+    tolerance = 0
+    encryption = ""
 ```
 
-This shorthand can now further be used in the `-R | --alias` flag while executing
+This shorthand can now further be used in the `-R | --alias` flag when executing
 other commands:
 ```
 $ knoxite -R fort store latest .
@@ -123,19 +126,13 @@ $ knoxite config set fort.compression gzip
 Here we set `gzip` as the default compression algorithm for the `fort`
 repository which looks like this in the config:
 
-```json
-{
-    "repositories": {
-        "fort": {
-            "url": "/tmp/knox",
-            "compression": "gzip",
-            "tolerance": 0,
-            "encryption": "",
-            "store_excludes": null,
-            "restore_excludes": null
-        }
-    }
-}
+```toml
+[repositories]
+  [repositories.fort]
+    url = "/tmp/knox"
+    compression = "gzip"
+    tolerance = 0
+    encryption = ""
 ```
 
 The `store_excludes` and `restore_excludes` are defined as an array of strings
@@ -147,29 +144,21 @@ Here's an example:
 $ knoxite config set fort.store_excludes dont/store/this/folder\* and/this/file
 ```
 
-```json
-{
-    "repositories": {
-        "fort": {
-            "url": "/tmp/knox",
-            "compression": "gzip",
-            "tolerance": 0,
-            "encryption": "",
-            "store_excludes": [
-                "dont/store/this/folder*",
-                "and/this/file"
-            ],
-            "restore_excludes": null
-        }
-    }
-}
+```toml
+[repositories]
+  [repositories.fort]
+    url = "/tmp/knox"
+    compression = "gzip"
+    tolerance = 0
+    encryption = ""
+    store_excludes = ["dont/store/this/folder*", "and/this/file"]
 ```
 
 ### Converting between backends
 The `convert` command helps you to translate between different configuration
 backends. There are currently three types of configuration backends supported
 by knoxite:
-- `file://`:   normal unencrypted json file (default)
+- `file://`:   normal unencrypted toml file (default)
 - `crypto://`: AES-GCM encrypted file
 - `mem://`:    no file - everything in memory
 
@@ -194,24 +183,16 @@ Alias            Storage URL                          Compression      Tolerance
 fort             /tmp/knox                            gzip             0
 ```
 
-To display the full configuration with the original json format use `cat`:
+To display the full configuration in the original toml format use `cat`:
 ```
 $ knoxite config cat
-{
-    "repositories": {
-        "fort": {
-            "url": "/tmp/knox",
-            "compression": "gzip",
-            "tolerance": 0,
-            "encryption": "",
-            "store_excludes": [
-                "dont/store/this/folder*",
-                "and/this/file"
-            ],
-            "restore_excludes": null
-        }
-    }
-}
+[repositories]
+  [repositories.fort]
+    url = "/tmp/knox"
+    compression = "gzip"
+    tolerance = 0
+    encryption = ""
+    store_excludes = ["dont/store/this/folder*", "and/this/file"]
 ```
 
 Note that the `cat` command also displays the exclude options for store and
