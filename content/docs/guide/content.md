@@ -146,6 +146,8 @@ The `store` command offers a variety of useful flags:
   backend failures.
 - `-x, --excludes` lets you choose to exclude files and folders from the
   snapshot.
+- `--pedantic` will exit knoxite after the first erroneous operation on a
+  file/folder.
 
 Run `snapshot store --help` for further information or see the guide
 sections: [Compression](#compression), [Encryption](#encryption) and
