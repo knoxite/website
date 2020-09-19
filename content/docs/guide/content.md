@@ -48,7 +48,7 @@ $ export KNOXITE_REPOSITORY=path/to/repo
 $ export KNOXITE_PASSWORD=password
 ```
 
-**IMPORTANT NOTE:** Providing your password with the `-p, --password` flag or
+**IMPORTANT NOTE:** Providing your password with the `--password` flag or
 via the environment variable is considered **UNSAFE** and should not be done
 unless you know what you're doing.
 
@@ -244,7 +244,7 @@ Use the `repo passwd` command to change the password of your repository.
 ```
 $ knoxite -r /tmp/knoxite repo passwd
 ```
-Before you enter your new password twice, you will be asked for your old password if you haven't provided it using the `-p | --password` option.
+Before you enter your new password twice, you will be asked for your old password if you haven't provided it using the `--password` option.
 
 ### Fault-Tolerance
 Assuming you've already configured several backends in your repository you can
