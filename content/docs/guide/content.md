@@ -12,7 +12,7 @@ subtitle = "knoxite's User Manual"
 
 ### Before you start
 This guide leads you through the basic commands of knoxite. 
-If you want to see more detailled information about how knoxite works in the background, you can always use the global `-v | --verbose` flag.
+If you want to see more detailed information about how knoxite works in the background, you can always use the global `-v | --verbose` flag.
 There are the three levels debug, info and warning. 
 When using the verbose flag, you always need to specify the verbose level as in following example:
 ```
