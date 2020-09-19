@@ -10,6 +10,15 @@ subtitle = "knoxite's User Manual"
 
 <p>
 
+### Before you start
+This guide leads you through the basic commands of knoxite. 
+If you want to see more detailled information about how knoxite works in the background, you can always use the global `-v | --verbose` flag.
+There are the three levels debug, info and warning. 
+When using the verbose flag, you always need to specify the verbose level as in following example:
+```
+knoxite ... -v info
+```
+
 ### Repositories
 A repository contains all the data for knoxite to work with. You can create
 repositories at different locations and combine them into one. Click
@@ -334,4 +343,18 @@ open /tmp/snapshots/90e34853: no such file or directory
 Verify done: 1 errors
 ```
 
+--- 
+
+## Flags
+### Global 
+
+| Flag | Name | Description | Default |
+| -------- | -------- | -------- | -------- | 
+| -r | Repository &nbsp;&nbsp; | Repository directory to backup to restore from | current working dir |
+| -R | Alias | Repository alias to backup to restore from | none |
+| -C | ConfigURL | Path to the configuration file | See [default paths for the different OS](/docs/configuration-system/#initializing-the-configuration) |
+| -v | Verbose | Verbose output: possible levels are debug, info and warning &nbsp;&nbsp; | warning |
+<br>
+
+Use `knoxite [commandname] --help` to get all available flags.
 </p>
