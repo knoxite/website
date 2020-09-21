@@ -116,6 +116,19 @@ da0327e0  Project                           My projects data stored in knoxite
 
 ---
 
+#### Remove volumes
+The `remove` command can be used to remove all references of a volume from a
+repository:
+
+```
+knoxite volume remove 1d9b4069
+Volume 1d9b4069 'Example' successfully removed
+Do not forget to run 'repo pack' to delete un-referenced chunks and free up storage space!
+```
+
+As the output suggests, you'll still have to run `repo pack` to release the
+un-referenced data chunks from the repository and free up storage space.
+
 ### Snapshots
 Snapshots are best used to incremental store your data in a volume. Knoxite
 takes care to chunk your data, encrypt it and to de-duplicate redundant data
