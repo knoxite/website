@@ -41,6 +41,7 @@ this:
     compression = "gzip"
     tolerance = 0
     encryption = ""
+    pedantic = true
     store_excludes = ["dont/store/this/folder*", "and/this/file"]
     restore_excludes = ["dont/restore/this/folder*"]
 ```
