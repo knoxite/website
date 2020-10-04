@@ -10,6 +10,15 @@ subtitle = "knoxite's User Manual"
 
 <p>
 
+### Before you start
+This guide leads you through the basic commands of knoxite. 
+If you want to see more detailed information about how knoxite works in the background, you can always use the global `-v | --verbose` flag.
+There are the three levels debug, info and warning. 
+When using the verbose flag, you always need to specify the verbose level as in following example:
+```
+knoxite ... -v info
+```
+
 ### Repositories
 A repository contains all the data for knoxite to work with. You can create
 repositories at different locations and combine them into one. Click
@@ -39,7 +48,7 @@ $ export KNOXITE_REPOSITORY=path/to/repo
 $ export KNOXITE_PASSWORD=password
 ```
 
-**IMPORTANT NOTE:** Providing your password with the `-p, --password` flag or
+**IMPORTANT NOTE:** Providing your password with the `--password` flag or
 via the environment variable is considered **UNSAFE** and should not be done
 unless you know what you're doing.
 
@@ -250,7 +259,7 @@ Use the `repo passwd` command to change the password of your repository.
 ```
 $ knoxite -r /tmp/knoxite repo passwd
 ```
-Before you enter your new password twice, you will be asked for your old password if you haven't provided it using the `-p | --password` option.
+Before you enter your new password twice, you will be asked for your old password if you haven't provided it using the `--password` option.
 
 ### Fault-Tolerance
 Assuming you've already configured several backends in your repository you can
@@ -349,4 +358,18 @@ open /tmp/snapshots/90e34853: no such file or directory
 Verify done: 1 errors
 ```
 
+--- 
+
+## Flags
+### Global 
+
+| Flag | Name | Description | Default |
+| -------- | -------- | -------- | -------- | 
+| -r | Repository &nbsp;&nbsp; | Repository directory to backup to restore from | current working dir |
+| -R | Alias | Repository alias to backup to restore from | none |
+| -C | ConfigURL | Path to the configuration file | See [default paths for the different OS](/docs/configuration-system/#initializing-the-configuration) |
+| -v | Verbose | Verbose output: possible levels are debug, info and warning &nbsp;&nbsp; | warning |
+<br>
+
+Use `knoxite [commandname] --help` to get all available flags.
 </p>
