@@ -26,7 +26,7 @@ IAM-Identity for each application. Find more about creating IAM-Identities
 You can create a repository using knoxite's `s3` or `s3s` (for usage with SSL) protocols:
 
 ```bash
-knoxite repo init s3s://[username]:[password]@s3.amazonaws.com/[region]/[bucketprefix]
+knoxite repo init -r s3s://[username]:[password]@s3.amazonaws.com/[region]/[bucketprefix]
 ```
 
 However, it is not considered safe to use username and password here. Instead,
