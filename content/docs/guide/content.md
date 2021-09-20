@@ -12,7 +12,8 @@ subtitle = "knoxite's User Manual"
 
 ### Before you start
 This guide leads you through the basic commands of knoxite. 
-If you want to see more detailed information about how knoxite works in the background, you can always use the global `-v | --verbose` flag. The verbose flag sets the log level to `Info`. 
+If you want to see more detailed information about how knoxite works in the background, you can always use the global `-v | --verbose` flag.
+The verbose flag `-v` sets the log level to `Info` and `-vv` sets it to `Debug`.
 ```
 knoxite ... -v
 ```
@@ -371,8 +372,8 @@ Verify done: 1 errors
 | -r | Repository &nbsp;&nbsp; | Repository directory to backup to restore from | current working dir |
 | -R | Alias | Repository alias to backup to restore from | none |
 | -C | ConfigURL | Path to the configuration file | See [default paths for the different OS](/docs/configuration-system/#initializing-the-configuration) |
-| -v | Verbose | Verbose output on log level Info. Use --loglevel to choose between Debug, Info, Warning and Fatal | none |
-| --loglevel | LogLevel | Verbose output. Possible levels are Debug, Info, Warning and Fatal &nbsp;&nbsp; | none |
+| -v | Verbose | Verbose output on log level Info (-v) or Debug (-vv). Use --loglevel to choose between Debug, Info, Warning and Fatal | none |
+| --loglevel | LogLevel | Verbose output. Possible levels are Debug, Info, Warning and Fatal | none |
 <br>
 
 Use `knoxite [commandname] --help` to get all available flags.
