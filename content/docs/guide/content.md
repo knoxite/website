@@ -100,6 +100,16 @@ Chunk 5b1e1c3ca2de4a6951b61ff7aa41a272411c18e2e8954b12d6c5d4abd71c79e0 is no lon
 Freed storage space: 23.42 MiB
 ```
 
+#### Manually migrating a repository to a new storage backend
+You may have the need to move your data to a different location.
+Currently it is only possible to migrate to a storage backend with the same storage mechanism, like to migrate from `SSH` to `SSH` or `s3s` to `amazons3`.
+
+To migrate you have to manually copy all files created by knoxite to the new storage location.
+You can then use the `set-url` command to exchange the backend url:
+```
+$ knoxite repo -r s3s://old.url/ set-url amazons3://new.url/
+```
+
 ---
 
 ### Volumes
